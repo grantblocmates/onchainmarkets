@@ -15,24 +15,24 @@ interface VestTicker {
   symbol: string;       // e.g. "AAPL-USD-PERP" (tradfi) or "BTC-PERP" (crypto)
   closePrice: string;
   quoteVolume: string;  // 24h volume in USD
-  priceChange: string;  // absolute change
-  priceChangePercent: string; // percentage change
+  priceChange: string | null;
+  priceChangePercent: string | null;
   lastPrice: string;
   highPrice: string;
   lowPrice: string;
   openPrice: string;
 }
 
-interface VestExchangeInfo {
-  symbols: Array<{
-    symbol: string;       // e.g. "AAPL-USD-PERP"
-    status: string;       // e.g. "TRADING"
-    baseAsset: string;    // e.g. "AAPL"
-    quoteAsset: string;   // e.g. "USD"
-    pricePrecision: number;
-    quantityPrecision: number;
-    maxLeverage?: string;
-  }>;
+interface VestExchangeSymbol {
+  symbol: string;           // e.g. "AAPL-USD-PERP"
+  displayName: string;
+  base: string;             // e.g. "AAPL-USD"
+  quote: string;            // e.g. "USDC"
+  sizeDecimals: number;
+  priceDecimals: number;
+  initMarginRatio: string;  // e.g. "0.040000" → 25x leverage
+  maintMarginRatio: string;
+  asset: string;            // "stock" | "forex" | "crypto"
 }
 
 /**
@@ -48,14 +48,18 @@ export async function fetchVest(): Promise<NormalizedMarket[]> {
     fetch(`${BASE_URL}/exchangeInfo`, { headers: HEADERS }),
   ]);
 
-  // Build leverage map from exchangeInfo
+  // Build leverage map and asset type map from exchangeInfo
   const leverageMap = new Map<string, number>();
+  const assetTypeMap = new Map<string, string>();
   if (infoRes.status === "fulfilled" && infoRes.value.ok) {
     try {
-      const info: VestExchangeInfo = await infoRes.value.json();
+      const info: { symbols: VestExchangeSymbol[] } = await infoRes.value.json();
       for (const sym of info.symbols) {
-        const lev = sym.maxLeverage ? parseInt(sym.maxLeverage, 10) : 20;
+        // Compute leverage from initMarginRatio: 0.04 → 25x
+        const margin = parseFloat(sym.initMarginRatio);
+        const lev = margin > 0 ? Math.floor(1 / margin) : 20;
         leverageMap.set(sym.symbol, lev);
+        assetTypeMap.set(sym.symbol, sym.asset);
       }
     } catch {
       console.error("Vest exchangeInfo parse error");
@@ -72,7 +76,7 @@ export async function fetchVest(): Promise<NormalizedMarket[]> {
   let tickers: VestTicker[];
   try {
     const body = await tickerRes.value.json();
-    // Response may be { tickers: [...] } or a direct array
+    // Response is { tickers: [...] }
     tickers = Array.isArray(body) ? body : body.tickers ?? [];
   } catch {
     console.error("Vest ticker parse error");
@@ -82,19 +86,34 @@ export async function fetchVest(): Promise<NormalizedMarket[]> {
   const markets: NormalizedMarket[] = [];
 
   for (const t of tickers) {
+    // Skip crypto by asset type from exchangeInfo (faster than normalization)
+    const vestAssetType = assetTypeMap.get(t.symbol);
+    if (vestAssetType === "crypto") continue;
+
     // Tradfi symbols: "AAPL-USD-PERP" -> "AAPL"
     // Crypto symbols: "BTC-PERP" -> "BTC" (will be filtered by classifyAsset)
     const rawTicker = t.symbol.replace(/-USD-PERP$/i, "").replace(/-PERP$/i, "");
     const ticker = normalizeTicker(rawTicker, "vest");
     const type = classifyAsset(ticker);
 
-    // Skip crypto
+    // Skip crypto (fallback filter)
     if (type === "crypto") continue;
 
-    const price = parseFloat(t.lastPrice || t.closePrice);
+    const price = parseFloat(t.closePrice || t.lastPrice);
     const volume = parseFloat(t.quoteVolume);
-    const change = parseFloat(t.priceChangePercent);
     const maxLeverage = leverageMap.get(t.symbol) ?? 20;
+
+    // Compute change% — priceChangePercent is often null, derive from open/close
+    let change24h: number | undefined;
+    if (t.priceChangePercent != null) {
+      change24h = parseFloat(t.priceChangePercent);
+    } else {
+      const open = parseFloat(t.openPrice);
+      const close = parseFloat(t.closePrice);
+      if (isFinite(open) && open > 0 && isFinite(close)) {
+        change24h = ((close - open) / open) * 100;
+      }
+    }
 
     markets.push({
       ticker,
@@ -106,7 +125,7 @@ export async function fetchVest(): Promise<NormalizedMarket[]> {
       maxLeverage,
       price: isFinite(price) && price > 0 ? price : undefined,
       volume24h: isFinite(volume) && volume > 0 ? volume : undefined,
-      change24h: isFinite(change) ? change : undefined,
+      change24h: isFinite(change24h!) ? change24h : undefined,
     });
   }
 
