@@ -5,38 +5,72 @@ import {
   getAssetName,
 } from "../types";
 
-const API_URL = "https://http.qfex.com/refdata";
+const BASE_URL = "https://http.qfex.com";
 
 interface QfexMarket {
+  clobPairId: string;
   symbol: string;        // e.g. "AAPL-USD"
   base_asset: string;    // e.g. "AAPL"
   quote_asset: string;   // e.g. "USD"
-  status: string;        // e.g. "active"
+  status: string;        // e.g. "ACTIVE"
   lot_size: string;
   tick_size: string;
-  min_order_size: string;
-  max_order_size: string;
-  initial_margin: string;
-  maintenance_margin: string;
+  min_price: string;
+  max_price: string;
+  min_quantity: string;
+  max_quantity: string;
+}
+
+interface QfexVolumeEntry {
+  volume: number;
+  notional: number;      // USD notional volume
 }
 
 /**
- * Fetch all markets from QFEX's refdata endpoint.
- * QFEX provides market discovery only (no live prices via REST).
+ * Fetch all markets from QFEX.
+ * Uses /refdata for market metadata and /v4/volume/today for daily volume.
  * Symbol format: "AAPL-USD" — we use base_asset for normalization.
  */
 export async function fetchQfex(): Promise<NormalizedMarket[]> {
-  const res = await fetch(API_URL);
+  const [refdataRes, volumeRes] = await Promise.allSettled([
+    fetch(`${BASE_URL}/refdata`),
+    fetch(`${BASE_URL}/v4/volume/today`),
+  ]);
 
-  if (!res.ok) {
-    console.error(`QFEX API error: ${res.status}`);
+  if (refdataRes.status !== "fulfilled" || !refdataRes.value.ok) {
+    const status = refdataRes.status === "fulfilled" ? refdataRes.value.status : "network error";
+    console.error(`QFEX refdata API error: ${status}`);
     return [];
   }
 
-  const data: QfexMarket[] = await res.json();
+  // Parse refdata — response is { type: "refdata", data: [...] }
+  let refdataItems: QfexMarket[];
+  try {
+    const body = await refdataRes.value.json();
+    refdataItems = Array.isArray(body) ? body : body.data ?? [];
+  } catch {
+    console.error("QFEX refdata parse error");
+    return [];
+  }
+
+  // Parse volume data — response is { "AAPL-USD": { volume, notional }, ... }
+  const volumeMap = new Map<string, number>();
+  if (volumeRes.status === "fulfilled" && volumeRes.value.ok) {
+    try {
+      const volData: Record<string, QfexVolumeEntry> = await volumeRes.value.json();
+      for (const [symbol, entry] of Object.entries(volData)) {
+        if (entry.notional > 0) {
+          volumeMap.set(symbol, entry.notional);
+        }
+      }
+    } catch {
+      console.error("QFEX volume parse error");
+    }
+  }
+
   const markets: NormalizedMarket[] = [];
 
-  for (const item of data) {
+  for (const item of refdataItems) {
     const rawTicker = item.base_asset;
     const ticker = normalizeTicker(rawTicker, "qfex");
     const type = classifyAsset(ticker);
@@ -44,9 +78,16 @@ export async function fetchQfex(): Promise<NormalizedMarket[]> {
     // Skip crypto
     if (type === "crypto") continue;
 
-    // Compute max leverage from initial_margin (fractional, e.g. "0.1" = 10x)
-    const marginFrac = parseFloat(item.initial_margin);
-    const maxLeverage = marginFrac > 0 ? Math.floor(1 / marginFrac) : 20;
+    // Estimate price from min/max bounds midpoint
+    const minPrice = parseFloat(item.min_price);
+    const maxPrice = parseFloat(item.max_price);
+    const price = (minPrice + maxPrice) / 2;
+
+    // Leverage from price bounds: max_price / midpoint ratio gives approximate leverage
+    const halfSpread = maxPrice - price;
+    const maxLeverage = halfSpread > 0 ? Math.max(1, Math.floor(price / halfSpread)) : 20;
+
+    const volume24h = volumeMap.get(item.symbol);
 
     markets.push({
       ticker,
@@ -54,8 +95,10 @@ export async function fetchQfex(): Promise<NormalizedMarket[]> {
       name: getAssetName(ticker),
       type,
       exchange: "qfex",
-      isActive: item.status === "active",
+      isActive: item.status === "ACTIVE",
       maxLeverage,
+      price: isFinite(price) && price > 0 ? price : undefined,
+      volume24h: volume24h && volume24h > 0 ? volume24h : undefined,
     });
   }
 

@@ -1351,6 +1351,24 @@
       }
     },
     {
+      "canonical": "RKLB",
+      "name": "Rocket Lab USA",
+      "category": "stock",
+      "exchanges": {
+        "hyperliquid": null,
+        "tradexyz": null,
+        "cash": null,
+        "hyna": null,
+        "vntl": null,
+        "flx": null,
+        "km": null,
+        "lighter": null,
+        "ostium": null,
+        "qfex": "RKLB",
+        "vest": "RKLB"
+      }
+    },
+    {
       "canonical": "BTGO",
       "name": "BitGo Holdings",
       "category": "ipo",
