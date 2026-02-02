@@ -36,7 +36,9 @@ export type ExchangeId =
   | "flx"
   | "km"
   | "lighter"
-  | "ostium";
+  | "ostium"
+  | "qfex"
+  | "vest";
 
 export type AssetCategory =
   | "stock"
