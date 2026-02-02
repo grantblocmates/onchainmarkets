@@ -7,40 +7,34 @@ interface AssetTableRowProps {
   rank: number;
 }
 
-/**
- * Format volume for display: $1.2B, $45.3M, $128K, etc.
- */
 function formatVolume(value: number | undefined): string {
-  if (value == null || value <= 0) return "—";
+  if (value == null || value <= 0) return "\u2014";
   if (value >= 1_000_000_000) {
-    return `$${(value / 1_000_000_000).toFixed(1)}B`;
+    return "$" + (value / 1_000_000_000).toFixed(1) + "B";
   }
   if (value >= 1_000_000) {
-    return `$${(value / 1_000_000).toFixed(1)}M`;
+    return "$" + (value / 1_000_000).toFixed(1) + "M";
   }
   if (value >= 1_000) {
-    return `$${(value / 1_000).toFixed(1)}K`;
+    return "$" + (value / 1_000).toFixed(1) + "K";
   }
-  return `$${value.toFixed(0)}`;
+  return "$" + value.toFixed(0);
 }
 
-/**
- * Format price for display.
- */
 function formatPrice(price: number | undefined): string {
-  if (price == null || price <= 0) return "—";
+  if (price == null || price <= 0) return "\u2014";
   if (price >= 10000)
-    return `$${price.toLocaleString("en-US", {
+    return "$" + price.toLocaleString("en-US", {
       minimumFractionDigits: 0,
       maximumFractionDigits: 0,
-    })}`;
+    });
   if (price >= 1)
-    return `$${price.toLocaleString("en-US", {
+    return "$" + price.toLocaleString("en-US", {
       minimumFractionDigits: 2,
       maximumFractionDigits: 2,
-    })}`;
-  if (price >= 0.01) return `$${price.toFixed(4)}`;
-  return `$${price.toFixed(6)}`;
+    });
+  if (price >= 0.01) return "$" + price.toFixed(4);
+  return "$" + price.toFixed(6);
 }
 
 export default function AssetTableRow({ asset, rank }: AssetTableRowProps) {
@@ -51,68 +45,62 @@ export default function AssetTableRow({ asset, rank }: AssetTableRowProps) {
   const isPositive = hasChange && change >= 0;
 
   return (
-    <Link href={`/asset/${asset.ticker}`} className="block">
-      <div className="grid grid-cols-[40px_1.4fr_1fr_80px_1fr] md:grid-cols-[40px_1.8fr_1fr_1fr_80px_1fr_1.2fr] items-center gap-2 px-4 py-3.5 border-b border-[#f0f0f0] hover:bg-[#FFFDF5] transition-colors cursor-pointer group min-w-[500px]">
+    <Link href={"/asset/" + asset.ticker} className="block">
+      <div className="grid grid-cols-[32px_1.4fr_1fr_80px_1fr] md:grid-cols-[32px_1.8fr_1fr_1fr_80px_0.6fr_1.2fr] items-center gap-2 px-4 py-2.5 border-b border-border-light hover:bg-row-hover transition-colors cursor-pointer group min-w-[500px]">
         {/* Rank */}
-        <span className="text-sm text-[#858585] text-center font-medium">
+        <span className="font-data text-xs text-text-muted text-center">
           {rank}
         </span>
 
         {/* Name + Ticker */}
-        <div className="flex items-center gap-3 min-w-0">
-          {/* Asset icon placeholder */}
-          <div className="w-8 h-8 rounded-full bg-[#f5f5f5] flex items-center justify-center shrink-0 text-xs font-bold text-[#666]">
-            {asset.ticker.slice(0, 2)}
-          </div>
+        <div className="flex items-center gap-2 min-w-0">
           <div className="min-w-0">
-            <span className="font-semibold text-[#1a1a1a] text-sm block truncate">
+            <span className="font-medium text-text-primary text-sm block truncate">
               {asset.name}
             </span>
-            <span className="text-xs text-[#999] uppercase">
+            <span className="font-data text-[11px] text-text-muted tracking-wide">
               {asset.ticker}
             </span>
           </div>
         </div>
 
-        {/* 24h Volume - hidden on mobile */}
+        {/* 24h Volume */}
         <div className="text-right hidden md:block">
-          <span className="text-sm text-[#1a1a1a] font-medium">
+          <span className="font-data text-sm text-text-secondary">
             {formatVolume(asset.volume24h)}
           </span>
         </div>
 
         {/* Price */}
         <div className="text-right">
-          <span className="text-sm text-[#1a1a1a] font-medium">
+          <span className="font-data text-sm text-text-primary">
             {formatPrice(asset.price)}
           </span>
         </div>
 
-        {/* Today (24h change) */}
+        {/* 24h Change */}
         <div className="text-right">
           {hasChange ? (
             <span
-              className={`text-sm font-semibold ${
-                isPositive ? "text-[#22C55E]" : "text-[#EF4444]"
-              }`}
+              className={"font-data text-sm " + (isPositive ? "text-positive" : "text-negative")}
             >
               {isPositive ? "+" : ""}
               {change.toFixed(2)}%
             </span>
           ) : (
-            <span className="text-sm text-[#ccc]">—</span>
+            <span className="font-data text-sm text-text-muted">{"\u2014"}</span>
           )}
         </div>
 
-        {/* Exchange count - hidden on mobile */}
+        {/* Venue count */}
         <div className="text-right hidden md:block">
-          <span className="text-sm text-[#666]">
+          <span className="font-data text-sm text-text-muted">
             {activeListings.length}
           </span>
         </div>
 
         {/* Trade On (exchange pills) */}
-        <div className="flex items-center justify-end gap-1.5 flex-wrap">
+        <div className="flex items-center justify-end gap-1 flex-wrap">
           {activeListings.map((listing) => {
             const exchange = getExchange(listing.exchangeId);
             if (!exchange) return null;
@@ -124,26 +112,9 @@ export default function AssetTableRow({ asset, rank }: AssetTableRowProps) {
                   e.stopPropagation();
                   window.open(getTradingUrl(listing.exchangeId, asset.ticker), "_blank");
                 }}
-                className="inline-flex items-center gap-1.5 text-xs font-medium px-2.5 py-1.5 rounded-full border border-[#e5e5e5] bg-white hover:border-[#3B82F6] hover:text-[#3B82F6] hover:bg-[#f0f7ff] transition-all cursor-pointer whitespace-nowrap"
+                className="font-data text-[10px] uppercase px-2 py-0.5 border border-border-light text-text-muted hover:text-text-primary hover:border-border-hover transition-colors cursor-pointer whitespace-nowrap"
               >
-                <span
-                  className="w-2 h-2 rounded-full shrink-0"
-                  style={{ backgroundColor: exchange.color }}
-                />
                 {exchange.name}
-                <svg
-                  className="w-3 h-3 opacity-40"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
-                  />
-                </svg>
               </span>
             );
           })}

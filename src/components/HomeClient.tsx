@@ -30,7 +30,6 @@ export default function HomeClient({ assets, exchangeCount }: HomeClientProps) {
     setSelectedExchanges((prev) => {
       const next = new Set(prev);
       if (next.has(id)) {
-        // Don't allow deselecting all
         if (next.size > 1) next.delete(id);
       } else {
         next.add(id);
@@ -42,7 +41,6 @@ export default function HomeClient({ assets, exchangeCount }: HomeClientProps) {
   const displayAssets = useMemo(() => {
     let result = assets;
 
-    // Search filter
     if (query.trim()) {
       const q = query.toLowerCase().trim();
       result = result.filter(
@@ -53,12 +51,10 @@ export default function HomeClient({ assets, exchangeCount }: HomeClientProps) {
       );
     }
 
-    // Category filter
     if (activeFilter !== "all") {
       result = result.filter((a) => a.type === activeFilter);
     }
 
-    // Exchange filter: show asset if it has ANY listing on a selected exchange
     if (selectedExchanges.size < EXCHANGE_LIST.length) {
       result = result.filter((a) =>
         a.listings.some(
@@ -67,7 +63,6 @@ export default function HomeClient({ assets, exchangeCount }: HomeClientProps) {
       );
     }
 
-    // Sort
     result = [...result].sort((a, b) => {
       switch (sortMode) {
         case "volume": {
@@ -93,7 +88,6 @@ export default function HomeClient({ assets, exchangeCount }: HomeClientProps) {
     return result;
   }, [assets, query, activeFilter, sortMode, selectedExchanges]);
 
-  // Count assets by type from live data
   const typeCounts = useMemo(() => {
     const counts: Record<string, number> = {};
     for (const type of CATEGORY_TYPES) {
@@ -102,113 +96,99 @@ export default function HomeClient({ assets, exchangeCount }: HomeClientProps) {
     return counts;
   }, [assets]);
 
-  const sortLabel =
-    sortMode === "volume"
-      ? "sorted by 24h volume"
-      : sortMode === "price"
-        ? "sorted by price"
-        : "sorted by 24h change";
-
   return (
-    <div className="min-h-screen bg-white">
-      {/* Top bar */}
-      <div className="mx-auto max-w-[1400px] px-6 pt-8 pb-6">
-        <div className="mb-6">
-          <h1 className="text-2xl font-bold text-[#1a1a1a] tracking-tight">
-            On-Chain Traditional Asset Markets
+    <div className="min-h-screen bg-bg">
+      {/* Masthead */}
+      <div className="mx-auto max-w-[1400px] px-6 pt-10 pb-8">
+        <div className="mb-8">
+          <h1 className="heading-condensed text-xl md:text-2xl text-text-primary mb-2">
+            TRADITIONAL ASSET PERPETUALS
           </h1>
-          <p className="mt-1 text-sm text-[#888]">
-            {assets.length} tradable assets across {exchangeCount}{" "}
-            decentralized exchanges — {sortLabel}
+          <p className="text-sm text-text-muted max-w-xl">
+            Real-time coverage of {assets.length} instruments across {exchangeCount} decentralized
+            venues. Equities, commodities, indices, and foreign exchange.
           </p>
         </div>
 
-        {/* Filter tabs + search */}
-        <div className="flex flex-col gap-3">
+        {/* Controls row */}
+        <div className="flex flex-col gap-4">
+          {/* Category filters + search */}
           <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-            <div className="flex items-center gap-1 bg-[#f7f7f7] rounded-lg p-1 overflow-x-auto whitespace-nowrap">
+            <div className="flex items-center gap-0 overflow-x-auto whitespace-nowrap">
               <button
                 onClick={() => setActiveFilter("all")}
-                className={`px-4 py-1.5 text-sm font-medium rounded-md transition-colors ${
+                className={`label-system text-[11px] px-3 py-1.5 border-b-2 transition-colors ${
                   activeFilter === "all"
-                    ? "bg-white text-[#1a1a1a] shadow-sm"
-                    : "text-[#888] hover:text-[#1a1a1a]"
+                    ? "border-text-primary text-text-primary"
+                    : "border-transparent text-text-muted hover:text-text-secondary"
                 }`}
               >
-                All
+                ALL
               </button>
               {CATEGORY_TYPES.map((type) => {
                 const meta = ASSET_TYPE_META[type];
                 const count = typeCounts[type] || 0;
-                // Hide categories with no assets
                 if (count === 0) return null;
                 return (
                   <button
                     key={type}
                     onClick={() => setActiveFilter(type)}
-                    className={`px-4 py-1.5 text-sm font-medium rounded-md transition-colors ${
+                    className={`label-system text-[11px] px-3 py-1.5 border-b-2 transition-colors ${
                       activeFilter === type
-                        ? "bg-white text-[#1a1a1a] shadow-sm"
-                        : "text-[#888] hover:text-[#1a1a1a]"
+                        ? "border-text-primary text-text-primary"
+                        : "border-transparent text-text-muted hover:text-text-secondary"
                     }`}
                   >
-                    {meta.label}
-                    <span className="ml-1.5 text-xs opacity-50">
-                      {count}
-                    </span>
+                    {meta.label.toUpperCase()}
+                    <span className="ml-1 opacity-40">{count}</span>
                   </button>
                 );
               })}
             </div>
 
-            <div className="w-full sm:w-72">
+            <div className="w-full sm:w-64">
               <SearchBar onSearch={setQuery} />
             </div>
           </div>
 
-          {/* Exchange filters + sort toggle */}
+          {/* Exchange filters + sort */}
           <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
-            <div className="flex items-center gap-1.5 overflow-x-auto whitespace-nowrap">
-              <span className="text-xs font-medium text-[#999] mr-1">Exchanges:</span>
+            <div className="flex items-center gap-0 overflow-x-auto whitespace-nowrap">
+              <span className="label-system text-[10px] mr-2">VENUES</span>
               {EXCHANGE_LIST.map((ex) => {
                 const isSelected = selectedExchanges.has(ex.id);
                 return (
                   <button
                     key={ex.id}
                     onClick={() => toggleExchange(ex.id)}
-                    className={`inline-flex items-center gap-1.5 text-xs font-medium px-2.5 py-1.5 rounded-full border transition-all ${
+                    className={`label-system text-[10px] px-2 py-1 border-b transition-colors ${
                       isSelected
-                        ? "border-[#d0d0d0] bg-white text-[#1a1a1a]"
-                        : "border-[#e5e5e5] bg-[#f9f9f9] text-[#bbb]"
+                        ? "border-text-primary text-text-primary"
+                        : "border-transparent text-text-muted hover:text-text-secondary"
                     }`}
                   >
-                    <span
-                      className="w-2 h-2 rounded-full shrink-0"
-                      style={{
-                        backgroundColor: isSelected ? ex.color : "#ddd",
-                      }}
-                    />
                     {ex.name}
                   </button>
                 );
               })}
             </div>
 
-            <div className="flex items-center gap-1 bg-[#f7f7f7] rounded-lg p-0.5">
+            <div className="flex items-center gap-0">
+              <span className="label-system text-[10px] mr-2">SORT</span>
               {(
                 [
-                  { key: "volume", label: "Volume" },
-                  { key: "price", label: "Price" },
-                  { key: "change", label: "Change" },
+                  { key: "volume", label: "VOLUME" },
+                  { key: "price", label: "PRICE" },
+                  { key: "change", label: "CHANGE" },
                 ] as const
               ).map((opt) => (
                 <button
                   key={opt.key}
                   onClick={() => setSortMode(opt.key)}
-                  className={`px-3 py-1 text-xs font-medium rounded-md transition-colors ${
+                  className={`label-system text-[10px] px-2 py-1 border-b transition-colors ${
                     sortMode === opt.key
-                      ? "bg-white text-[#1a1a1a] shadow-sm"
-                      : "text-[#888] hover:text-[#1a1a1a]"
+                      ? "border-text-primary text-text-primary"
+                      : "border-transparent text-text-muted hover:text-text-secondary"
                   }`}
                 >
                   {opt.label}
@@ -221,61 +201,51 @@ export default function HomeClient({ assets, exchangeCount }: HomeClientProps) {
 
       {/* Table */}
       <div className="mx-auto max-w-[1400px] px-6 pb-20">
-        <div className="bg-white border border-[#e5e5e5] rounded-xl overflow-hidden">
+        <div className="border-t border-border">
           <div className="overflow-x-auto">
-          {/* Table header */}
-          <div className="grid grid-cols-[40px_1.4fr_1fr_80px_1fr] md:grid-cols-[40px_1.8fr_1fr_1fr_80px_1fr_1.2fr] items-center gap-2 px-4 py-3 border-b border-[#e5e5e5] bg-[#fafafa] min-w-[500px]">
-            <span className="text-xs font-semibold text-[#999] text-center">
-              #
-            </span>
-            <span className="text-xs font-semibold text-[#999]">Name</span>
-            <span className="text-xs font-semibold text-[#999] text-right hidden md:block">
-              24h Volume
-            </span>
-            <span className="text-xs font-semibold text-[#999] text-right">
-              Price
-            </span>
-            <span className="text-xs font-semibold text-[#999] text-right">
-              Today
-            </span>
-            <span className="text-xs font-semibold text-[#999] text-right hidden md:block">
-              Exchanges
-            </span>
-            <span className="text-xs font-semibold text-[#999] text-right">
-              Trade On
-            </span>
-          </div>
-
-          {/* Rows */}
-          {displayAssets.length > 0 ? (
-            displayAssets.map((asset, i) => (
-              <AssetTableRow key={asset.ticker} asset={asset} rank={i + 1} />
-            ))
-          ) : (
-            <div className="px-6 py-16 text-center">
-              <p className="text-[#999] text-sm">
-                No assets found{query ? ` for "${query}"` : ""}.
-                {activeFilter !== "all" && (
-                  <button
-                    onClick={() => setActiveFilter("all")}
-                    className="ml-1 text-[#3B82F6] hover:underline"
-                  >
-                    Show all
-                  </button>
-                )}
-              </p>
+            {/* Table header */}
+            <div className="grid grid-cols-[32px_1.4fr_1fr_80px_1fr] md:grid-cols-[32px_1.8fr_1fr_1fr_80px_0.6fr_1.2fr] items-center gap-2 px-4 py-2.5 border-b border-border min-w-[500px]">
+              <span className="label-system text-[10px] text-center">#</span>
+              <span className="label-system text-[10px]">ASSET</span>
+              <span className="label-system text-[10px] text-right hidden md:block">VOLUME 24H</span>
+              <span className="label-system text-[10px] text-right">PRICE</span>
+              <span className="label-system text-[10px] text-right">CHG%</span>
+              <span className="label-system text-[10px] text-right hidden md:block">VENUES</span>
+              <span className="label-system text-[10px] text-right">TRADE ON</span>
             </div>
-          )}
-          </div>{/* end overflow-x-auto */}
+
+            {/* Rows */}
+            {displayAssets.length > 0 ? (
+              displayAssets.map((asset, i) => (
+                <AssetTableRow key={asset.ticker} asset={asset} rank={i + 1} />
+              ))
+            ) : (
+              <div className="px-6 py-16 text-center">
+                <p className="text-text-muted text-sm">
+                  No assets match current filters{query ? ` for "${query}"` : ""}.
+                  {activeFilter !== "all" && (
+                    <button
+                      onClick={() => setActiveFilter("all")}
+                      className="ml-1 text-text-secondary underline hover:text-text-primary"
+                    >
+                      Clear filter
+                    </button>
+                  )}
+                </p>
+              </div>
+            )}
+          </div>
         </div>
 
-        {/* Quick hint */}
-        {!query && activeFilter === "all" && (
-          <p className="mt-4 text-xs text-[#bbb] text-center">
-            Search by ticker (TSLA), name (Tesla), or sector (Semiconductors) •
-            Live data from exchange APIs • Refreshes every 5 minutes
+        {/* Scope note */}
+        <div className="mt-6 flex items-center justify-between">
+          <p className="label-system text-[10px]">
+            {displayAssets.length} of {assets.length} instruments shown
           </p>
-        )}
+          <p className="label-system text-[10px]">
+            {exchangeCount} venues indexed
+          </p>
+        </div>
       </div>
     </div>
   );

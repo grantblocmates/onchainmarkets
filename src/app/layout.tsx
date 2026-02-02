@@ -15,9 +15,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "On-Chain Markets — Find Where to Trade Traditional Assets On-Chain",
+  title: "On-Chain Markets — Traditional Asset Perpetuals Across Decentralized Venues",
   description:
-    "Discover where to trade stocks, commodities, indices, and forex as perpetual contracts across Hyperliquid, Ostium, Lighter, and more decentralized exchanges.",
+    "Market intelligence for on-chain traditional asset perpetuals. Stocks, commodities, indices, and FX across Hyperliquid, Ostium, Lighter, and other decentralized venues.",
 };
 
 export default function RootLayout({
@@ -28,7 +28,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen flex flex-col`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen flex flex-col bg-bg`}
       >
         <Header />
         <main className="flex-1">{children}</main>

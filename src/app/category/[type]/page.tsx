@@ -13,12 +13,12 @@ export function generateStaticParams() {
 export function generateMetadata({ params }: { params: Promise<{ type: string }> }) {
   return params.then(({ type }) => {
     if (!validTypes.includes(type as AssetType)) {
-      return { title: "Category Not Found — On-Chain Markets" };
+      return { title: "Category Not Found \u2014 On-Chain Markets" };
     }
     const meta = ASSET_TYPE_META[type as AssetType];
     return {
-      title: `${meta.label} — On-Chain Markets`,
-      description: `${meta.description}. Browse all ${meta.label.toLowerCase()} available as perpetual contracts on decentralized exchanges.`,
+      title: meta.label + " \u2014 On-Chain Markets",
+      description: meta.description + ". Browse all " + meta.label.toLowerCase() + " available as perpetual contracts on decentralized venues.",
     };
   });
 }
@@ -39,47 +39,42 @@ export default async function CategoryPage({
   const categoryAssets = getAssetsByType(assetType);
 
   return (
-    <div className="max-w-6xl mx-auto px-6 py-12">
+    <div className="max-w-[1400px] mx-auto px-6 py-12">
       {/* Back link */}
       <Link
         href="/"
-        className="inline-flex items-center gap-2 text-sm text-text-muted hover:text-text-primary transition-colors mb-8"
+        className="label-system text-[11px] hover:text-text-primary transition-colors mb-10 inline-block"
       >
-        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-        </svg>
-        Back to all assets
+        &larr; BACK TO INDEX
       </Link>
 
       {/* Category header */}
-      <div className="mb-10">
-        <div className="flex items-center gap-3 mb-2">
-          <span className="text-4xl">{meta.icon}</span>
-          <h1 className="text-4xl md:text-5xl font-bold text-text-primary tracking-tight">
-            {meta.label}
-          </h1>
-        </div>
-        <p className="text-lg text-text-secondary">{meta.description}</p>
-        <p className="text-sm text-text-muted mt-2">
-          {categoryAssets.length} asset{categoryAssets.length !== 1 ? "s" : ""} available
+      <div className="mb-8 border-b border-border pb-6">
+        <h1 className="heading-condensed text-2xl md:text-3xl text-text-primary mb-2">
+          {meta.label.toUpperCase()}
+        </h1>
+        <p className="text-sm text-text-secondary">{meta.description}</p>
+        <p className="label-system text-[10px] mt-3">
+          {categoryAssets.length} INSTRUMENT{categoryAssets.length !== 1 ? "S" : ""} INDEXED
         </p>
       </div>
 
       {/* Assets grid */}
       {categoryAssets.length > 0 ? (
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-0 border-l border-t border-border-light">
           {categoryAssets.map((asset) => (
-            <AssetCard key={asset.ticker} asset={asset} />
+            <div key={asset.ticker} className="border-r border-b border-border-light">
+              <AssetCard asset={asset} />
+            </div>
           ))}
         </div>
       ) : (
-        <div className="rounded-3xl border border-border bg-bg-card p-12 text-center">
-          <p className="text-4xl mb-4">{meta.icon}</p>
-          <p className="text-lg font-semibold text-text-primary">
-            No {meta.label.toLowerCase()} listed yet
+        <div className="border border-border-light p-12 text-center">
+          <p className="text-sm text-text-secondary">
+            No {meta.label.toLowerCase()} indexed.
           </p>
-          <p className="mt-2 text-sm text-text-secondary">
-            Check back soon — new markets are being added regularly.
+          <p className="text-xs text-text-muted mt-1">
+            New markets are indexed as venues list them.
           </p>
         </div>
       )}
