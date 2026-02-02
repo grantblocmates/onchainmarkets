@@ -2,6 +2,8 @@ import { NextResponse } from "next/server";
 import { fetchHyperliquid } from "@/lib/fetchers/hyperliquid";
 import { fetchOstium } from "@/lib/fetchers/ostium";
 import { fetchLighter } from "@/lib/fetchers/lighter";
+import { fetchQfex } from "@/lib/fetchers/qfex";
+import { fetchVest } from "@/lib/fetchers/vest";
 
 /**
  * GET /api/test-fetch
@@ -18,6 +20,8 @@ export async function GET(request: Request) {
     hyperliquid: fetchHyperliquid,
     ostium: fetchOstium,
     lighter: fetchLighter,
+    qfex: fetchQfex,
+    vest: fetchVest,
   };
 
   // Run selected or all fetchers

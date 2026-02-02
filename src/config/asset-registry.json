@@ -13,7 +13,9 @@
         "flx": null,
         "km": "AAPL",
         "lighter": "AAPL",
-        "ostium": "AAPL/USD"
+        "ostium": "AAPL/USD",
+        "qfex": "AAPL",
+        "vest": null
       }
     },
     {
@@ -29,7 +31,9 @@
         "flx": null,
         "km": null,
         "lighter": null,
-        "ostium": null
+        "ostium": null,
+        "qfex": null,
+        "vest": null
       }
     },
     {
@@ -45,7 +49,9 @@
         "flx": null,
         "km": null,
         "lighter": null,
-        "ostium": "AMD/USD"
+        "ostium": "AMD/USD",
+        "qfex": null,
+        "vest": null
       }
     },
     {
@@ -61,7 +67,9 @@
         "flx": null,
         "km": null,
         "lighter": "AMZN",
-        "ostium": "AMZN/USD"
+        "ostium": "AMZN/USD",
+        "qfex": null,
+        "vest": null
       }
     },
     {
@@ -77,7 +85,9 @@
         "flx": null,
         "km": null,
         "lighter": null,
-        "ostium": null
+        "ostium": null,
+        "qfex": null,
+        "vest": null
       }
     },
     {
@@ -93,7 +103,9 @@
         "flx": null,
         "km": null,
         "lighter": "AUDUSD",
-        "ostium": "AUD/USD"
+        "ostium": "AUD/USD",
+        "qfex": null,
+        "vest": null
       }
     },
     {
@@ -109,7 +121,9 @@
         "flx": null,
         "km": "BABA",
         "lighter": null,
-        "ostium": "BABA/USD"
+        "ostium": "BABA/USD",
+        "qfex": null,
+        "vest": null
       }
     },
     {
@@ -125,7 +139,9 @@
         "flx": null,
         "km": null,
         "lighter": null,
-        "ostium": null
+        "ostium": null,
+        "qfex": null,
+        "vest": null
       }
     },
     {
@@ -141,7 +157,9 @@
         "flx": null,
         "km": null,
         "lighter": "BMNR",
-        "ostium": "BMNR/USD"
+        "ostium": "BMNR/USD",
+        "qfex": null,
+        "vest": null
       }
     },
     {
@@ -157,7 +175,9 @@
         "flx": null,
         "km": null,
         "lighter": null,
-        "ostium": "BYD/USD"
+        "ostium": "BYD/USD",
+        "qfex": null,
+        "vest": null
       }
     },
     {
@@ -173,7 +193,9 @@
         "flx": "OIL",
         "km": "USOIL",
         "lighter": null,
-        "ostium": "CL/USD"
+        "ostium": "CL/USD",
+        "qfex": null,
+        "vest": null
       }
     },
     {
@@ -189,7 +211,9 @@
         "flx": "COIN",
         "km": null,
         "lighter": "COIN",
-        "ostium": "COIN/USD"
+        "ostium": "COIN/USD",
+        "qfex": null,
+        "vest": null
       }
     },
     {
@@ -205,7 +229,9 @@
         "flx": null,
         "km": null,
         "lighter": null,
-        "ostium": "COST/USD"
+        "ostium": "COST/USD",
+        "qfex": null,
+        "vest": null
       }
     },
     {
@@ -221,7 +247,9 @@
         "flx": "CRCL",
         "km": null,
         "lighter": "CRCL",
-        "ostium": "CRCL/USD"
+        "ostium": "CRCL/USD",
+        "qfex": null,
+        "vest": null
       }
     },
     {
@@ -237,7 +265,9 @@
         "flx": null,
         "km": null,
         "lighter": null,
-        "ostium": null
+        "ostium": null,
+        "qfex": "CRWV",
+        "vest": null
       }
     },
     {
@@ -253,7 +283,9 @@
         "flx": null,
         "km": null,
         "lighter": null,
-        "ostium": "CVX/USD"
+        "ostium": "CVX/USD",
+        "qfex": null,
+        "vest": null
       }
     },
     {
@@ -269,7 +301,9 @@
         "flx": null,
         "km": null,
         "lighter": null,
-        "ostium": "DAX/EUR"
+        "ostium": "DAX/EUR",
+        "qfex": null,
+        "vest": null
       }
     },
     {
@@ -285,7 +319,9 @@
         "flx": null,
         "km": null,
         "lighter": null,
-        "ostium": null
+        "ostium": null,
+        "qfex": null,
+        "vest": null
       }
     },
     {
@@ -301,7 +337,9 @@
         "flx": null,
         "km": null,
         "lighter": null,
-        "ostium": "DJI/USD"
+        "ostium": "DJI/USD",
+        "qfex": null,
+        "vest": null
       }
     },
     {
@@ -317,7 +355,9 @@
         "flx": null,
         "km": null,
         "lighter": null,
-        "ostium": null
+        "ostium": null,
+        "qfex": null,
+        "vest": null
       }
     },
     {
@@ -333,7 +373,9 @@
         "flx": null,
         "km": "EUR",
         "lighter": "EURUSD",
-        "ostium": "EUR/USD"
+        "ostium": "EUR/USD",
+        "qfex": "EUR",
+        "vest": null
       }
     },
     {
@@ -349,7 +391,9 @@
         "flx": null,
         "km": null,
         "lighter": null,
-        "ostium": "FTSE/GBP"
+        "ostium": "FTSE/GBP",
+        "qfex": null,
+        "vest": null
       }
     },
     {
@@ -365,7 +409,9 @@
         "flx": null,
         "km": null,
         "lighter": "GBPUSD",
-        "ostium": "GBP/USD"
+        "ostium": "GBP/USD",
+        "qfex": "GBP",
+        "vest": null
       }
     },
     {
@@ -381,7 +427,9 @@
         "flx": null,
         "km": null,
         "lighter": null,
-        "ostium": "GLXY/USD"
+        "ostium": "GLXY/USD",
+        "qfex": null,
+        "vest": null
       }
     },
     {
@@ -397,7 +445,9 @@
         "flx": null,
         "km": "GOOGL",
         "lighter": "GOOGL",
-        "ostium": "GOOG/USD"
+        "ostium": "GOOG/USD",
+        "qfex": null,
+        "vest": null
       }
     },
     {
@@ -413,7 +463,9 @@
         "flx": "COPPER",
         "km": null,
         "lighter": null,
-        "ostium": "HG/USD"
+        "ostium": "HG/USD",
+        "qfex": null,
+        "vest": null
       }
     },
     {
@@ -429,7 +481,9 @@
         "flx": null,
         "km": null,
         "lighter": "HOOD",
-        "ostium": "HOOD/USD"
+        "ostium": "HOOD/USD",
+        "qfex": null,
+        "vest": null
       }
     },
     {
@@ -445,7 +499,9 @@
         "flx": null,
         "km": null,
         "lighter": null,
-        "ostium": "HSI/HKD"
+        "ostium": "HSI/HKD",
+        "qfex": null,
+        "vest": null
       }
     },
     {
@@ -461,7 +517,9 @@
         "flx": null,
         "km": null,
         "lighter": null,
-        "ostium": null
+        "ostium": null,
+        "qfex": null,
+        "vest": null
       }
     },
     {
@@ -477,7 +535,9 @@
         "flx": null,
         "km": null,
         "lighter": null,
-        "ostium": null
+        "ostium": null,
+        "qfex": null,
+        "vest": null
       }
     },
     {
@@ -493,7 +553,9 @@
         "flx": null,
         "km": null,
         "lighter": null,
-        "ostium": null
+        "ostium": null,
+        "qfex": null,
+        "vest": null
       }
     },
     {
@@ -509,7 +571,9 @@
         "flx": null,
         "km": null,
         "lighter": null,
-        "ostium": null
+        "ostium": null,
+        "qfex": null,
+        "vest": null
       }
     },
     {
@@ -525,7 +589,9 @@
         "flx": null,
         "km": null,
         "lighter": "META",
-        "ostium": "META/USD"
+        "ostium": "META/USD",
+        "qfex": "META",
+        "vest": null
       }
     },
     {
@@ -541,7 +607,9 @@
         "flx": null,
         "km": null,
         "lighter": "MSFT",
-        "ostium": "MSFT/USD"
+        "ostium": "MSFT/USD",
+        "qfex": "MSFT",
+        "vest": null
       }
     },
     {
@@ -557,7 +625,9 @@
         "flx": null,
         "km": null,
         "lighter": "MSTR",
-        "ostium": "MSTR/USD"
+        "ostium": "MSTR/USD",
+        "qfex": null,
+        "vest": null
       }
     },
     {
@@ -573,7 +643,9 @@
         "flx": null,
         "km": null,
         "lighter": null,
-        "ostium": null
+        "ostium": null,
+        "qfex": null,
+        "vest": null
       }
     },
     {
@@ -589,7 +661,9 @@
         "flx": null,
         "km": "USTECH",
         "lighter": "QQQ",
-        "ostium": "NDX/USD"
+        "ostium": "NDX/USD",
+        "qfex": "US100",
+        "vest": null
       }
     },
     {
@@ -605,7 +679,9 @@
         "flx": null,
         "km": null,
         "lighter": null,
-        "ostium": "NFLX/USD"
+        "ostium": "NFLX/USD",
+        "qfex": null,
+        "vest": null
       }
     },
     {
@@ -621,7 +697,9 @@
         "flx": "GAS",
         "km": null,
         "lighter": null,
-        "ostium": null
+        "ostium": null,
+        "qfex": null,
+        "vest": null
       }
     },
     {
@@ -637,7 +715,9 @@
         "flx": null,
         "km": null,
         "lighter": null,
-        "ostium": "NIK/JPY"
+        "ostium": "NIK/JPY",
+        "qfex": null,
+        "vest": null
       }
     },
     {
@@ -653,7 +733,9 @@
         "flx": null,
         "km": null,
         "lighter": null,
-        "ostium": null
+        "ostium": null,
+        "qfex": null,
+        "vest": null
       }
     },
     {
@@ -669,7 +751,9 @@
         "flx": "NVDA",
         "km": null,
         "lighter": "NVDA",
-        "ostium": "NVDA/USD"
+        "ostium": "NVDA/USD",
+        "qfex": "NVDA",
+        "vest": null
       }
     },
     {
@@ -685,7 +769,9 @@
         "flx": null,
         "km": null,
         "lighter": "NZDUSD",
-        "ostium": "NZD/USD"
+        "ostium": "NZD/USD",
+        "qfex": null,
+        "vest": null
       }
     },
     {
@@ -701,7 +787,9 @@
         "flx": null,
         "km": null,
         "lighter": null,
-        "ostium": null
+        "ostium": null,
+        "qfex": null,
+        "vest": null
       }
     },
     {
@@ -717,7 +805,9 @@
         "flx": null,
         "km": null,
         "lighter": null,
-        "ostium": "ORCL/USD"
+        "ostium": "ORCL/USD",
+        "qfex": null,
+        "vest": null
       }
     },
     {
@@ -733,7 +823,9 @@
         "flx": null,
         "km": null,
         "lighter": "PAXG",
-        "ostium": null
+        "ostium": null,
+        "qfex": null,
+        "vest": null
       }
     },
     {
@@ -749,7 +841,9 @@
         "flx": null,
         "km": null,
         "lighter": "PLTR",
-        "ostium": "PLTR/USD"
+        "ostium": "PLTR/USD",
+        "qfex": "PLTR",
+        "vest": null
       }
     },
     {
@@ -765,7 +859,9 @@
         "flx": null,
         "km": null,
         "lighter": null,
-        "ostium": "RIVN/USD"
+        "ostium": "RIVN/USD",
+        "qfex": null,
+        "vest": null
       }
     },
     {
@@ -781,7 +877,9 @@
         "flx": null,
         "km": null,
         "lighter": null,
-        "ostium": null
+        "ostium": null,
+        "qfex": null,
+        "vest": null
       }
     },
     {
@@ -797,7 +895,9 @@
         "flx": null,
         "km": "SMALL2000",
         "lighter": null,
-        "ostium": null
+        "ostium": null,
+        "qfex": null,
+        "vest": null
       }
     },
     {
@@ -813,7 +913,9 @@
         "flx": null,
         "km": null,
         "lighter": null,
-        "ostium": "SBET/USD"
+        "ostium": "SBET/USD",
+        "qfex": null,
+        "vest": null
       }
     },
     {
@@ -829,7 +931,9 @@
         "flx": null,
         "km": null,
         "lighter": null,
-        "ostium": null
+        "ostium": null,
+        "qfex": null,
+        "vest": null
       }
     },
     {
@@ -845,7 +949,9 @@
         "flx": null,
         "km": null,
         "lighter": null,
-        "ostium": null
+        "ostium": null,
+        "qfex": null,
+        "vest": null
       }
     },
     {
@@ -861,7 +967,9 @@
         "flx": null,
         "km": null,
         "lighter": null,
-        "ostium": null
+        "ostium": null,
+        "qfex": null,
+        "vest": null
       }
     },
     {
@@ -877,7 +985,9 @@
         "flx": null,
         "km": null,
         "lighter": null,
-        "ostium": null
+        "ostium": null,
+        "qfex": null,
+        "vest": null
       }
     },
     {
@@ -893,7 +1003,9 @@
         "flx": null,
         "km": null,
         "lighter": null,
-        "ostium": null
+        "ostium": null,
+        "qfex": null,
+        "vest": null
       }
     },
     {
@@ -909,7 +1021,9 @@
         "flx": null,
         "km": "US500",
         "lighter": "SPY",
-        "ostium": "SPX/USD"
+        "ostium": "SPX/USD",
+        "qfex": null,
+        "vest": null
       }
     },
     {
@@ -925,7 +1039,9 @@
         "flx": "TSLA",
         "km": "TSLA",
         "lighter": "TSLA",
-        "ostium": "TSLA/USD"
+        "ostium": "TSLA/USD",
+        "qfex": "TSLA",
+        "vest": null
       }
     },
     {
@@ -941,7 +1057,9 @@
         "flx": null,
         "km": null,
         "lighter": null,
-        "ostium": null
+        "ostium": null,
+        "qfex": null,
+        "vest": null
       }
     },
     {
@@ -957,7 +1075,9 @@
         "flx": null,
         "km": null,
         "lighter": null,
-        "ostium": "URA/USD"
+        "ostium": "URA/USD",
+        "qfex": "URANIUM",
+        "vest": null
       }
     },
     {
@@ -973,7 +1093,9 @@
         "flx": null,
         "km": null,
         "lighter": null,
-        "ostium": null
+        "ostium": null,
+        "qfex": null,
+        "vest": null
       }
     },
     {
@@ -989,7 +1111,9 @@
         "flx": null,
         "km": null,
         "lighter": null,
-        "ostium": null
+        "ostium": null,
+        "qfex": null,
+        "vest": null
       }
     },
     {
@@ -1005,7 +1129,9 @@
         "flx": null,
         "km": "USBOND",
         "lighter": null,
-        "ostium": null
+        "ostium": null,
+        "qfex": null,
+        "vest": null
       }
     },
     {
@@ -1021,7 +1147,9 @@
         "flx": null,
         "km": null,
         "lighter": "USDCAD",
-        "ostium": "USD/CAD"
+        "ostium": "USD/CAD",
+        "qfex": null,
+        "vest": null
       }
     },
     {
@@ -1037,7 +1165,9 @@
         "flx": null,
         "km": null,
         "lighter": "USDCHF",
-        "ostium": "USD/CHF"
+        "ostium": "USD/CHF",
+        "qfex": null,
+        "vest": null
       }
     },
     {
@@ -1053,7 +1183,9 @@
         "flx": null,
         "km": null,
         "lighter": "USDJPY",
-        "ostium": "USD/JPY"
+        "ostium": "USD/JPY",
+        "qfex": null,
+        "vest": null
       }
     },
     {
@@ -1069,7 +1201,9 @@
         "flx": null,
         "km": null,
         "lighter": "USDKRW",
-        "ostium": null
+        "ostium": null,
+        "qfex": null,
+        "vest": null
       }
     },
     {
@@ -1085,7 +1219,9 @@
         "flx": null,
         "km": null,
         "lighter": null,
-        "ostium": "USD/MXN"
+        "ostium": "USD/MXN",
+        "qfex": null,
+        "vest": null
       }
     },
     {
@@ -1101,7 +1237,9 @@
         "flx": null,
         "km": "USENERGY",
         "lighter": null,
-        "ostium": null
+        "ostium": null,
+        "qfex": null,
+        "vest": null
       }
     },
     {
@@ -1117,7 +1255,9 @@
         "flx": "SILVER",
         "km": "SILVER",
         "lighter": "XAG",
-        "ostium": "XAG/USD"
+        "ostium": "XAG/USD",
+        "qfex": "SILVER",
+        "vest": null
       }
     },
     {
@@ -1133,7 +1273,9 @@
         "flx": "GOLD",
         "km": "GOLD",
         "lighter": "XAU",
-        "ostium": "XAU/USD"
+        "ostium": "XAU/USD",
+        "qfex": "GOLD",
+        "vest": null
       }
     },
     {
@@ -1149,7 +1291,9 @@
         "flx": null,
         "km": null,
         "lighter": null,
-        "ostium": "XOM/USD"
+        "ostium": "XOM/USD",
+        "qfex": null,
+        "vest": null
       }
     },
     {
@@ -1165,7 +1309,9 @@
         "flx": "PALLADIUM",
         "km": null,
         "lighter": null,
-        "ostium": "XPD/USD"
+        "ostium": "XPD/USD",
+        "qfex": null,
+        "vest": null
       }
     },
     {
@@ -1181,7 +1327,9 @@
         "flx": "PLATINUM",
         "km": null,
         "lighter": null,
-        "ostium": "XPT/USD"
+        "ostium": "XPT/USD",
+        "qfex": null,
+        "vest": null
       }
     },
     {
@@ -1197,7 +1345,9 @@
         "flx": null,
         "km": null,
         "lighter": null,
-        "ostium": null
+        "ostium": null,
+        "qfex": null,
+        "vest": null
       }
     }
   ],
@@ -1260,6 +1410,18 @@
       "name": "Ostium",
       "color": "#878B9B",
       "urlTemplate": "https://app.ostium.com/trade?from={TICKER}&to=USD&ref=LUF4D",
+      "isHip3": false
+    },
+    "qfex": {
+      "name": "QFEX",
+      "color": "#6B4C9A",
+      "urlTemplate": "https://app.qfex.com/trade/{TICKER}-USD?ref=grant",
+      "isHip3": false
+    },
+    "vest": {
+      "name": "Vest",
+      "color": "#14B8A6",
+      "urlTemplate": "https://app.vest.exchange/trade/{TICKER}-PERP",
       "isHip3": false
     }
   }

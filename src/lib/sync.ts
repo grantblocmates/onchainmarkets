@@ -1,4 +1,4 @@
-import { fetchHyperliquid, fetchOstium, fetchLighter } from "./fetchers";
+import { fetchHyperliquid, fetchOstium, fetchLighter, fetchQfex, fetchVest } from "./fetchers";
 import type { NormalizedMarket, AssetCategory, ExchangeId } from "./types";
 
 /**
@@ -43,6 +43,8 @@ export async function syncMarkets(): Promise<MergedAsset[]> {
     fetchHyperliquid(),
     fetchOstium(),
     fetchLighter(),
+    fetchQfex(),
+    fetchVest(),
   ]);
 
   const allMarkets: NormalizedMarket[] = [];
