@@ -1,0 +1,1266 @@
+{
+  "assets": [
+    {
+      "canonical": "AAPL",
+      "name": "Apple",
+      "category": "stock",
+      "exchanges": {
+        "hyperliquid": null,
+        "tradexyz": "AAPL",
+        "cash": null,
+        "hyna": null,
+        "vntl": null,
+        "flx": null,
+        "km": "AAPL",
+        "lighter": "AAPL",
+        "ostium": "AAPL/USD"
+      }
+    },
+    {
+      "canonical": "ALU",
+      "name": "Aluminium",
+      "category": "commodity",
+      "exchanges": {
+        "hyperliquid": null,
+        "tradexyz": "ALUMINIUM",
+        "cash": null,
+        "hyna": null,
+        "vntl": null,
+        "flx": null,
+        "km": null,
+        "lighter": null,
+        "ostium": null
+      }
+    },
+    {
+      "canonical": "AMD",
+      "name": "Advanced Micro Devices",
+      "category": "stock",
+      "exchanges": {
+        "hyperliquid": null,
+        "tradexyz": "AMD",
+        "cash": null,
+        "hyna": null,
+        "vntl": null,
+        "flx": null,
+        "km": null,
+        "lighter": null,
+        "ostium": "AMD/USD"
+      }
+    },
+    {
+      "canonical": "AMZN",
+      "name": "Amazon",
+      "category": "stock",
+      "exchanges": {
+        "hyperliquid": null,
+        "tradexyz": "AMZN",
+        "cash": "AMZN",
+        "hyna": null,
+        "vntl": null,
+        "flx": null,
+        "km": null,
+        "lighter": "AMZN",
+        "ostium": "AMZN/USD"
+      }
+    },
+    {
+      "canonical": "ANTHROPIC",
+      "name": "Anthropic",
+      "category": "stock",
+      "exchanges": {
+        "hyperliquid": null,
+        "tradexyz": null,
+        "cash": null,
+        "hyna": null,
+        "vntl": "ANTHROPIC",
+        "flx": null,
+        "km": null,
+        "lighter": null,
+        "ostium": null
+      }
+    },
+    {
+      "canonical": "AUDUSD",
+      "name": "Australian Dollar / US Dollar",
+      "category": "forex",
+      "exchanges": {
+        "hyperliquid": null,
+        "tradexyz": null,
+        "cash": null,
+        "hyna": null,
+        "vntl": null,
+        "flx": null,
+        "km": null,
+        "lighter": "AUDUSD",
+        "ostium": "AUD/USD"
+      }
+    },
+    {
+      "canonical": "BABA",
+      "name": "Alibaba",
+      "category": "stock",
+      "exchanges": {
+        "hyperliquid": null,
+        "tradexyz": "BABA",
+        "cash": null,
+        "hyna": null,
+        "vntl": null,
+        "flx": null,
+        "km": "BABA",
+        "lighter": null,
+        "ostium": "BABA/USD"
+      }
+    },
+    {
+      "canonical": "BIOTECH",
+      "name": "Biotechnology Index",
+      "category": "index",
+      "exchanges": {
+        "hyperliquid": null,
+        "tradexyz": null,
+        "cash": null,
+        "hyna": null,
+        "vntl": "BIOTECH",
+        "flx": null,
+        "km": null,
+        "lighter": null,
+        "ostium": null
+      }
+    },
+    {
+      "canonical": "BMNR",
+      "name": "BitMiner",
+      "category": "stock",
+      "exchanges": {
+        "hyperliquid": null,
+        "tradexyz": null,
+        "cash": null,
+        "hyna": null,
+        "vntl": null,
+        "flx": null,
+        "km": null,
+        "lighter": "BMNR",
+        "ostium": "BMNR/USD"
+      }
+    },
+    {
+      "canonical": "BYD",
+      "name": "BYD Company",
+      "category": "stock",
+      "exchanges": {
+        "hyperliquid": null,
+        "tradexyz": null,
+        "cash": null,
+        "hyna": null,
+        "vntl": null,
+        "flx": null,
+        "km": null,
+        "lighter": null,
+        "ostium": "BYD/USD"
+      }
+    },
+    {
+      "canonical": "CL",
+      "name": "Crude Oil",
+      "category": "commodity",
+      "exchanges": {
+        "hyperliquid": null,
+        "tradexyz": "CL",
+        "cash": null,
+        "hyna": null,
+        "vntl": null,
+        "flx": "OIL",
+        "km": "USOIL",
+        "lighter": null,
+        "ostium": "CL/USD"
+      }
+    },
+    {
+      "canonical": "COIN",
+      "name": "Coinbase",
+      "category": "stock",
+      "exchanges": {
+        "hyperliquid": null,
+        "tradexyz": "COIN",
+        "cash": null,
+        "hyna": null,
+        "vntl": null,
+        "flx": "COIN",
+        "km": null,
+        "lighter": "COIN",
+        "ostium": "COIN/USD"
+      }
+    },
+    {
+      "canonical": "COST",
+      "name": "Costco",
+      "category": "stock",
+      "exchanges": {
+        "hyperliquid": null,
+        "tradexyz": "COST",
+        "cash": null,
+        "hyna": null,
+        "vntl": null,
+        "flx": null,
+        "km": null,
+        "lighter": null,
+        "ostium": "COST/USD"
+      }
+    },
+    {
+      "canonical": "CRCL",
+      "name": "Circle",
+      "category": "stock",
+      "exchanges": {
+        "hyperliquid": null,
+        "tradexyz": "CRCL",
+        "cash": null,
+        "hyna": null,
+        "vntl": null,
+        "flx": "CRCL",
+        "km": null,
+        "lighter": "CRCL",
+        "ostium": "CRCL/USD"
+      }
+    },
+    {
+      "canonical": "CRWV",
+      "name": "CrowdStrike",
+      "category": "stock",
+      "exchanges": {
+        "hyperliquid": null,
+        "tradexyz": "CRWV",
+        "cash": null,
+        "hyna": null,
+        "vntl": null,
+        "flx": null,
+        "km": null,
+        "lighter": null,
+        "ostium": null
+      }
+    },
+    {
+      "canonical": "CVX",
+      "name": "Chevron",
+      "category": "stock",
+      "exchanges": {
+        "hyperliquid": null,
+        "tradexyz": null,
+        "cash": null,
+        "hyna": null,
+        "vntl": null,
+        "flx": null,
+        "km": null,
+        "lighter": null,
+        "ostium": "CVX/USD"
+      }
+    },
+    {
+      "canonical": "DAX",
+      "name": "DAX 40",
+      "category": "index",
+      "exchanges": {
+        "hyperliquid": null,
+        "tradexyz": null,
+        "cash": null,
+        "hyna": null,
+        "vntl": null,
+        "flx": null,
+        "km": null,
+        "lighter": null,
+        "ostium": "DAX/EUR"
+      }
+    },
+    {
+      "canonical": "DEFENSE",
+      "name": "Defense & Aerospace Index",
+      "category": "index",
+      "exchanges": {
+        "hyperliquid": null,
+        "tradexyz": null,
+        "cash": null,
+        "hyna": null,
+        "vntl": "DEFENSE",
+        "flx": null,
+        "km": null,
+        "lighter": null,
+        "ostium": null
+      }
+    },
+    {
+      "canonical": "DJI",
+      "name": "Dow Jones Industrial",
+      "category": "index",
+      "exchanges": {
+        "hyperliquid": null,
+        "tradexyz": null,
+        "cash": null,
+        "hyna": null,
+        "vntl": null,
+        "flx": null,
+        "km": null,
+        "lighter": null,
+        "ostium": "DJI/USD"
+      }
+    },
+    {
+      "canonical": "ENERGY",
+      "name": "Energy Sector Index",
+      "category": "index",
+      "exchanges": {
+        "hyperliquid": null,
+        "tradexyz": null,
+        "cash": null,
+        "hyna": null,
+        "vntl": "ENERGY",
+        "flx": null,
+        "km": null,
+        "lighter": null,
+        "ostium": null
+      }
+    },
+    {
+      "canonical": "EURUSD",
+      "name": "Euro / US Dollar",
+      "category": "forex",
+      "exchanges": {
+        "hyperliquid": null,
+        "tradexyz": "EUR",
+        "cash": null,
+        "hyna": null,
+        "vntl": null,
+        "flx": null,
+        "km": "EUR",
+        "lighter": "EURUSD",
+        "ostium": "EUR/USD"
+      }
+    },
+    {
+      "canonical": "FTSE",
+      "name": "FTSE 100",
+      "category": "index",
+      "exchanges": {
+        "hyperliquid": null,
+        "tradexyz": null,
+        "cash": null,
+        "hyna": null,
+        "vntl": null,
+        "flx": null,
+        "km": null,
+        "lighter": null,
+        "ostium": "FTSE/GBP"
+      }
+    },
+    {
+      "canonical": "GBPUSD",
+      "name": "British Pound / US Dollar",
+      "category": "forex",
+      "exchanges": {
+        "hyperliquid": null,
+        "tradexyz": null,
+        "cash": null,
+        "hyna": null,
+        "vntl": null,
+        "flx": null,
+        "km": null,
+        "lighter": "GBPUSD",
+        "ostium": "GBP/USD"
+      }
+    },
+    {
+      "canonical": "GLXY",
+      "name": "Galaxy Digital",
+      "category": "stock",
+      "exchanges": {
+        "hyperliquid": null,
+        "tradexyz": null,
+        "cash": null,
+        "hyna": null,
+        "vntl": null,
+        "flx": null,
+        "km": null,
+        "lighter": null,
+        "ostium": "GLXY/USD"
+      }
+    },
+    {
+      "canonical": "GOOGL",
+      "name": "Alphabet (Google)",
+      "category": "stock",
+      "exchanges": {
+        "hyperliquid": null,
+        "tradexyz": "GOOGL",
+        "cash": "GOOGL",
+        "hyna": null,
+        "vntl": null,
+        "flx": null,
+        "km": "GOOGL",
+        "lighter": "GOOGL",
+        "ostium": "GOOG/USD"
+      }
+    },
+    {
+      "canonical": "HG",
+      "name": "Copper",
+      "category": "commodity",
+      "exchanges": {
+        "hyperliquid": null,
+        "tradexyz": "COPPER",
+        "cash": null,
+        "hyna": null,
+        "vntl": null,
+        "flx": "COPPER",
+        "km": null,
+        "lighter": null,
+        "ostium": "HG/USD"
+      }
+    },
+    {
+      "canonical": "HOOD",
+      "name": "Robinhood",
+      "category": "stock",
+      "exchanges": {
+        "hyperliquid": null,
+        "tradexyz": "HOOD",
+        "cash": "HOOD",
+        "hyna": null,
+        "vntl": null,
+        "flx": null,
+        "km": null,
+        "lighter": "HOOD",
+        "ostium": "HOOD/USD"
+      }
+    },
+    {
+      "canonical": "HSI",
+      "name": "Hang Seng",
+      "category": "index",
+      "exchanges": {
+        "hyperliquid": null,
+        "tradexyz": null,
+        "cash": null,
+        "hyna": null,
+        "vntl": null,
+        "flx": null,
+        "km": null,
+        "lighter": null,
+        "ostium": "HSI/HKD"
+      }
+    },
+    {
+      "canonical": "INFOTECH",
+      "name": "Information Technology Index",
+      "category": "index",
+      "exchanges": {
+        "hyperliquid": null,
+        "tradexyz": null,
+        "cash": null,
+        "hyna": null,
+        "vntl": "INFOTECH",
+        "flx": null,
+        "km": null,
+        "lighter": null,
+        "ostium": null
+      }
+    },
+    {
+      "canonical": "INTC",
+      "name": "Intel",
+      "category": "stock",
+      "exchanges": {
+        "hyperliquid": null,
+        "tradexyz": "INTC",
+        "cash": "INTC",
+        "hyna": null,
+        "vntl": null,
+        "flx": null,
+        "km": null,
+        "lighter": null,
+        "ostium": null
+      }
+    },
+    {
+      "canonical": "LLY",
+      "name": "Eli Lilly",
+      "category": "stock",
+      "exchanges": {
+        "hyperliquid": null,
+        "tradexyz": "LLY",
+        "cash": null,
+        "hyna": null,
+        "vntl": null,
+        "flx": null,
+        "km": null,
+        "lighter": null,
+        "ostium": null
+      }
+    },
+    {
+      "canonical": "MAG7",
+      "name": "Magnificent 7 Index",
+      "category": "index",
+      "exchanges": {
+        "hyperliquid": null,
+        "tradexyz": null,
+        "cash": null,
+        "hyna": null,
+        "vntl": "MAG7",
+        "flx": null,
+        "km": null,
+        "lighter": null,
+        "ostium": null
+      }
+    },
+    {
+      "canonical": "META",
+      "name": "Meta Platforms",
+      "category": "stock",
+      "exchanges": {
+        "hyperliquid": null,
+        "tradexyz": "META",
+        "cash": "META",
+        "hyna": null,
+        "vntl": null,
+        "flx": null,
+        "km": null,
+        "lighter": "META",
+        "ostium": "META/USD"
+      }
+    },
+    {
+      "canonical": "MSFT",
+      "name": "Microsoft",
+      "category": "stock",
+      "exchanges": {
+        "hyperliquid": null,
+        "tradexyz": "MSFT",
+        "cash": "MSFT",
+        "hyna": null,
+        "vntl": null,
+        "flx": null,
+        "km": null,
+        "lighter": "MSFT",
+        "ostium": "MSFT/USD"
+      }
+    },
+    {
+      "canonical": "MSTR",
+      "name": "MicroStrategy",
+      "category": "stock",
+      "exchanges": {
+        "hyperliquid": null,
+        "tradexyz": "MSTR",
+        "cash": null,
+        "hyna": null,
+        "vntl": null,
+        "flx": null,
+        "km": null,
+        "lighter": "MSTR",
+        "ostium": "MSTR/USD"
+      }
+    },
+    {
+      "canonical": "MU",
+      "name": "Micron",
+      "category": "stock",
+      "exchanges": {
+        "hyperliquid": null,
+        "tradexyz": "MU",
+        "cash": null,
+        "hyna": null,
+        "vntl": null,
+        "flx": null,
+        "km": null,
+        "lighter": null,
+        "ostium": null
+      }
+    },
+    {
+      "canonical": "NDX",
+      "name": "Nasdaq 100",
+      "category": "index",
+      "exchanges": {
+        "hyperliquid": null,
+        "tradexyz": null,
+        "cash": null,
+        "hyna": null,
+        "vntl": null,
+        "flx": null,
+        "km": "USTECH",
+        "lighter": "QQQ",
+        "ostium": "NDX/USD"
+      }
+    },
+    {
+      "canonical": "NFLX",
+      "name": "Netflix",
+      "category": "stock",
+      "exchanges": {
+        "hyperliquid": null,
+        "tradexyz": "NFLX",
+        "cash": null,
+        "hyna": null,
+        "vntl": null,
+        "flx": null,
+        "km": null,
+        "lighter": null,
+        "ostium": "NFLX/USD"
+      }
+    },
+    {
+      "canonical": "NG",
+      "name": "Natural Gas",
+      "category": "commodity",
+      "exchanges": {
+        "hyperliquid": null,
+        "tradexyz": "NATGAS",
+        "cash": null,
+        "hyna": null,
+        "vntl": null,
+        "flx": "GAS",
+        "km": null,
+        "lighter": null,
+        "ostium": null
+      }
+    },
+    {
+      "canonical": "NIKKEI",
+      "name": "Nikkei 225",
+      "category": "index",
+      "exchanges": {
+        "hyperliquid": null,
+        "tradexyz": null,
+        "cash": null,
+        "hyna": null,
+        "vntl": null,
+        "flx": null,
+        "km": null,
+        "lighter": null,
+        "ostium": "NIK/JPY"
+      }
+    },
+    {
+      "canonical": "NUCLEAR",
+      "name": "Nuclear Energy Index",
+      "category": "index",
+      "exchanges": {
+        "hyperliquid": null,
+        "tradexyz": null,
+        "cash": null,
+        "hyna": null,
+        "vntl": "NUCLEAR",
+        "flx": null,
+        "km": null,
+        "lighter": null,
+        "ostium": null
+      }
+    },
+    {
+      "canonical": "NVDA",
+      "name": "NVIDIA",
+      "category": "stock",
+      "exchanges": {
+        "hyperliquid": null,
+        "tradexyz": "NVDA",
+        "cash": "NVDA",
+        "hyna": null,
+        "vntl": null,
+        "flx": "NVDA",
+        "km": null,
+        "lighter": "NVDA",
+        "ostium": "NVDA/USD"
+      }
+    },
+    {
+      "canonical": "NZDUSD",
+      "name": "New Zealand Dollar / US Dollar",
+      "category": "forex",
+      "exchanges": {
+        "hyperliquid": null,
+        "tradexyz": null,
+        "cash": null,
+        "hyna": null,
+        "vntl": null,
+        "flx": null,
+        "km": null,
+        "lighter": "NZDUSD",
+        "ostium": "NZD/USD"
+      }
+    },
+    {
+      "canonical": "OPENAI",
+      "name": "OpenAI",
+      "category": "stock",
+      "exchanges": {
+        "hyperliquid": null,
+        "tradexyz": null,
+        "cash": null,
+        "hyna": null,
+        "vntl": "OPENAI",
+        "flx": null,
+        "km": null,
+        "lighter": null,
+        "ostium": null
+      }
+    },
+    {
+      "canonical": "ORCL",
+      "name": "Oracle",
+      "category": "stock",
+      "exchanges": {
+        "hyperliquid": null,
+        "tradexyz": "ORCL",
+        "cash": null,
+        "hyna": null,
+        "vntl": null,
+        "flx": null,
+        "km": null,
+        "lighter": null,
+        "ostium": "ORCL/USD"
+      }
+    },
+    {
+      "canonical": "PAXG",
+      "name": "PAX Gold",
+      "category": "commodity",
+      "exchanges": {
+        "hyperliquid": "PAXG",
+        "tradexyz": null,
+        "cash": null,
+        "hyna": null,
+        "vntl": null,
+        "flx": null,
+        "km": null,
+        "lighter": "PAXG",
+        "ostium": null
+      }
+    },
+    {
+      "canonical": "PLTR",
+      "name": "Palantir",
+      "category": "stock",
+      "exchanges": {
+        "hyperliquid": null,
+        "tradexyz": "PLTR",
+        "cash": null,
+        "hyna": null,
+        "vntl": null,
+        "flx": null,
+        "km": null,
+        "lighter": "PLTR",
+        "ostium": "PLTR/USD"
+      }
+    },
+    {
+      "canonical": "RIVN",
+      "name": "Rivian",
+      "category": "stock",
+      "exchanges": {
+        "hyperliquid": null,
+        "tradexyz": "RIVN",
+        "cash": null,
+        "hyna": null,
+        "vntl": null,
+        "flx": null,
+        "km": null,
+        "lighter": null,
+        "ostium": "RIVN/USD"
+      }
+    },
+    {
+      "canonical": "ROBOT",
+      "name": "Robotics & AI Index",
+      "category": "index",
+      "exchanges": {
+        "hyperliquid": null,
+        "tradexyz": null,
+        "cash": null,
+        "hyna": null,
+        "vntl": "ROBOT",
+        "flx": null,
+        "km": null,
+        "lighter": null,
+        "ostium": null
+      }
+    },
+    {
+      "canonical": "RUT",
+      "name": "Russell 2000",
+      "category": "index",
+      "exchanges": {
+        "hyperliquid": null,
+        "tradexyz": null,
+        "cash": null,
+        "hyna": null,
+        "vntl": null,
+        "flx": null,
+        "km": "SMALL2000",
+        "lighter": null,
+        "ostium": null
+      }
+    },
+    {
+      "canonical": "SBET",
+      "name": "SharpLink Gaming",
+      "category": "stock",
+      "exchanges": {
+        "hyperliquid": null,
+        "tradexyz": null,
+        "cash": null,
+        "hyna": null,
+        "vntl": null,
+        "flx": null,
+        "km": null,
+        "lighter": null,
+        "ostium": "SBET/USD"
+      }
+    },
+    {
+      "canonical": "SEMIS",
+      "name": "Semiconductors Index",
+      "category": "index",
+      "exchanges": {
+        "hyperliquid": null,
+        "tradexyz": null,
+        "cash": null,
+        "hyna": null,
+        "vntl": "SEMIS",
+        "flx": null,
+        "km": null,
+        "lighter": null,
+        "ostium": null
+      }
+    },
+    {
+      "canonical": "SKHX",
+      "name": "Skybridge Hexagonal",
+      "category": "stock",
+      "exchanges": {
+        "hyperliquid": null,
+        "tradexyz": "SKHX",
+        "cash": null,
+        "hyna": null,
+        "vntl": null,
+        "flx": null,
+        "km": null,
+        "lighter": null,
+        "ostium": null
+      }
+    },
+    {
+      "canonical": "SMSN",
+      "name": "Samsung",
+      "category": "stock",
+      "exchanges": {
+        "hyperliquid": null,
+        "tradexyz": "SMSN",
+        "cash": null,
+        "hyna": null,
+        "vntl": null,
+        "flx": null,
+        "km": null,
+        "lighter": null,
+        "ostium": null
+      }
+    },
+    {
+      "canonical": "SNDK",
+      "name": "SanDisk",
+      "category": "stock",
+      "exchanges": {
+        "hyperliquid": null,
+        "tradexyz": "SNDK",
+        "cash": null,
+        "hyna": null,
+        "vntl": null,
+        "flx": null,
+        "km": null,
+        "lighter": null,
+        "ostium": null
+      }
+    },
+    {
+      "canonical": "SPACEX",
+      "name": "SpaceX",
+      "category": "stock",
+      "exchanges": {
+        "hyperliquid": null,
+        "tradexyz": null,
+        "cash": null,
+        "hyna": null,
+        "vntl": "SPACEX",
+        "flx": null,
+        "km": null,
+        "lighter": null,
+        "ostium": null
+      }
+    },
+    {
+      "canonical": "SPX",
+      "name": "S&P 500",
+      "category": "index",
+      "exchanges": {
+        "hyperliquid": null,
+        "tradexyz": null,
+        "cash": "USA500",
+        "hyna": null,
+        "vntl": null,
+        "flx": null,
+        "km": "US500",
+        "lighter": "SPY",
+        "ostium": "SPX/USD"
+      }
+    },
+    {
+      "canonical": "TSLA",
+      "name": "Tesla",
+      "category": "stock",
+      "exchanges": {
+        "hyperliquid": null,
+        "tradexyz": "TSLA",
+        "cash": "TSLA",
+        "hyna": null,
+        "vntl": null,
+        "flx": "TSLA",
+        "km": "TSLA",
+        "lighter": "TSLA",
+        "ostium": "TSLA/USD"
+      }
+    },
+    {
+      "canonical": "TSM",
+      "name": "Taiwan Semiconductor",
+      "category": "stock",
+      "exchanges": {
+        "hyperliquid": null,
+        "tradexyz": "TSM",
+        "cash": null,
+        "hyna": null,
+        "vntl": null,
+        "flx": null,
+        "km": null,
+        "lighter": null,
+        "ostium": null
+      }
+    },
+    {
+      "canonical": "URA",
+      "name": "Uranium",
+      "category": "commodity",
+      "exchanges": {
+        "hyperliquid": null,
+        "tradexyz": "URANIUM",
+        "cash": null,
+        "hyna": null,
+        "vntl": null,
+        "flx": null,
+        "km": null,
+        "lighter": null,
+        "ostium": "URA/USD"
+      }
+    },
+    {
+      "canonical": "URNM",
+      "name": "Sprott Uranium Miners ETF",
+      "category": "stock",
+      "exchanges": {
+        "hyperliquid": null,
+        "tradexyz": "URNM",
+        "cash": null,
+        "hyna": null,
+        "vntl": null,
+        "flx": null,
+        "km": null,
+        "lighter": null,
+        "ostium": null
+      }
+    },
+    {
+      "canonical": "USAR",
+      "name": "US Arctic Resources",
+      "category": "stock",
+      "exchanges": {
+        "hyperliquid": null,
+        "tradexyz": "USAR",
+        "cash": null,
+        "hyna": null,
+        "vntl": null,
+        "flx": null,
+        "km": null,
+        "lighter": null,
+        "ostium": null
+      }
+    },
+    {
+      "canonical": "USBOND",
+      "name": "US Treasury Bond",
+      "category": "bond",
+      "exchanges": {
+        "hyperliquid": null,
+        "tradexyz": null,
+        "cash": null,
+        "hyna": null,
+        "vntl": null,
+        "flx": null,
+        "km": "USBOND",
+        "lighter": null,
+        "ostium": null
+      }
+    },
+    {
+      "canonical": "USDCAD",
+      "name": "US Dollar / Canadian Dollar",
+      "category": "forex",
+      "exchanges": {
+        "hyperliquid": null,
+        "tradexyz": null,
+        "cash": null,
+        "hyna": null,
+        "vntl": null,
+        "flx": null,
+        "km": null,
+        "lighter": "USDCAD",
+        "ostium": "USD/CAD"
+      }
+    },
+    {
+      "canonical": "USDCHF",
+      "name": "US Dollar / Swiss Franc",
+      "category": "forex",
+      "exchanges": {
+        "hyperliquid": null,
+        "tradexyz": null,
+        "cash": null,
+        "hyna": null,
+        "vntl": null,
+        "flx": null,
+        "km": null,
+        "lighter": "USDCHF",
+        "ostium": "USD/CHF"
+      }
+    },
+    {
+      "canonical": "USDJPY",
+      "name": "US Dollar / Japanese Yen",
+      "category": "forex",
+      "exchanges": {
+        "hyperliquid": null,
+        "tradexyz": "JPY",
+        "cash": null,
+        "hyna": null,
+        "vntl": null,
+        "flx": null,
+        "km": null,
+        "lighter": "USDJPY",
+        "ostium": "USD/JPY"
+      }
+    },
+    {
+      "canonical": "USDKRW",
+      "name": "US Dollar / Korean Won",
+      "category": "forex",
+      "exchanges": {
+        "hyperliquid": null,
+        "tradexyz": null,
+        "cash": null,
+        "hyna": null,
+        "vntl": null,
+        "flx": null,
+        "km": null,
+        "lighter": "USDKRW",
+        "ostium": null
+      }
+    },
+    {
+      "canonical": "USDMXN",
+      "name": "US Dollar / Mexican Peso",
+      "category": "forex",
+      "exchanges": {
+        "hyperliquid": null,
+        "tradexyz": null,
+        "cash": null,
+        "hyna": null,
+        "vntl": null,
+        "flx": null,
+        "km": null,
+        "lighter": null,
+        "ostium": "USD/MXN"
+      }
+    },
+    {
+      "canonical": "USENERGY",
+      "name": "US Energy Sector",
+      "category": "index",
+      "exchanges": {
+        "hyperliquid": null,
+        "tradexyz": null,
+        "cash": null,
+        "hyna": null,
+        "vntl": null,
+        "flx": null,
+        "km": "USENERGY",
+        "lighter": null,
+        "ostium": null
+      }
+    },
+    {
+      "canonical": "XAG",
+      "name": "Silver",
+      "category": "commodity",
+      "exchanges": {
+        "hyperliquid": null,
+        "tradexyz": "SILVER",
+        "cash": null,
+        "hyna": null,
+        "vntl": null,
+        "flx": "SILVER",
+        "km": "SILVER",
+        "lighter": "XAG",
+        "ostium": "XAG/USD"
+      }
+    },
+    {
+      "canonical": "XAU",
+      "name": "Gold",
+      "category": "commodity",
+      "exchanges": {
+        "hyperliquid": null,
+        "tradexyz": "GOLD",
+        "cash": null,
+        "hyna": null,
+        "vntl": null,
+        "flx": "GOLD",
+        "km": "GOLD",
+        "lighter": "XAU",
+        "ostium": "XAU/USD"
+      }
+    },
+    {
+      "canonical": "XOM",
+      "name": "Exxon Mobil",
+      "category": "stock",
+      "exchanges": {
+        "hyperliquid": null,
+        "tradexyz": null,
+        "cash": null,
+        "hyna": null,
+        "vntl": null,
+        "flx": null,
+        "km": null,
+        "lighter": null,
+        "ostium": "XOM/USD"
+      }
+    },
+    {
+      "canonical": "XPD",
+      "name": "Palladium",
+      "category": "commodity",
+      "exchanges": {
+        "hyperliquid": null,
+        "tradexyz": "PALLADIUM",
+        "cash": null,
+        "hyna": null,
+        "vntl": null,
+        "flx": "PALLADIUM",
+        "km": null,
+        "lighter": null,
+        "ostium": "XPD/USD"
+      }
+    },
+    {
+      "canonical": "XPT",
+      "name": "Platinum",
+      "category": "commodity",
+      "exchanges": {
+        "hyperliquid": null,
+        "tradexyz": "PLATINUM",
+        "cash": null,
+        "hyna": null,
+        "vntl": null,
+        "flx": "PLATINUM",
+        "km": null,
+        "lighter": null,
+        "ostium": "XPT/USD"
+      }
+    },
+    {
+      "canonical": "XYZ100",
+      "name": "Nasdaq 100 Tracker",
+      "category": "index",
+      "exchanges": {
+        "hyperliquid": null,
+        "tradexyz": "XYZ100",
+        "cash": null,
+        "hyna": null,
+        "vntl": null,
+        "flx": null,
+        "km": null,
+        "lighter": null,
+        "ostium": null
+      }
+    }
+  ],
+  "exchangeMeta": {
+    "hyperliquid": {
+      "name": "Hyperliquid",
+      "color": "#84E8A2",
+      "urlTemplate": "https://app.hyperliquid.xyz/trade/{TICKER}?ref=GRANTBLOCMATES",
+      "isHip3": false
+    },
+    "tradexyz": {
+      "name": "tradeXYZ",
+      "color": "#8B5CF6",
+      "urlTemplate": "https://app.trade.xyz/?market={TICKER}",
+      "isHip3": true,
+      "deployer": "xyz"
+    },
+    "cash": {
+      "name": "CASH",
+      "color": "#F59E0B",
+      "urlTemplate": "https://app.hyperliquid.xyz/trade/{TICKER}?ref=GRANTBLOCMATES",
+      "isHip3": true,
+      "deployer": "cash"
+    },
+    "hyna": {
+      "name": "Hyena",
+      "color": "#EF4444",
+      "urlTemplate": "https://app.hyperliquid.xyz/trade/{TICKER}?ref=GRANTBLOCMATES",
+      "isHip3": true,
+      "deployer": "hyna"
+    },
+    "vntl": {
+      "name": "Ventuals",
+      "color": "#3B82F6",
+      "urlTemplate": "https://app.hyperliquid.xyz/trade/{TICKER}?ref=GRANTBLOCMATES",
+      "isHip3": true,
+      "deployer": "vntl"
+    },
+    "flx": {
+      "name": "FLX",
+      "color": "#10B981",
+      "urlTemplate": "https://app.hyperliquid.xyz/trade/{TICKER}?ref=GRANTBLOCMATES",
+      "isHip3": true,
+      "deployer": "flx"
+    },
+    "km": {
+      "name": "Kinetiq Markets",
+      "color": "#6366F1",
+      "urlTemplate": "https://app.hyperliquid.xyz/trade/{TICKER}?ref=GRANTBLOCMATES",
+      "isHip3": true,
+      "deployer": "km"
+    },
+    "lighter": {
+      "name": "Lighter",
+      "color": "#F97316",
+      "urlTemplate": "https://app.lighter.xyz/trade/{TICKER}?referral=192461W3",
+      "isHip3": false
+    },
+    "ostium": {
+      "name": "Ostium",
+      "color": "#6366F1",
+      "urlTemplate": "https://app.ostium.com/trade?from={TICKER}&to=USD&ref=LUF4D",
+      "isHip3": false
+    }
+  }
+}
