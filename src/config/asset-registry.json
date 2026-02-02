@@ -1721,7 +1721,7 @@
     "qfex": {
       "name": "QFEX",
       "color": "#6B4C9A",
-      "urlTemplate": "https://app.qfex.com/trade/{TICKER}-USD?ref=grant",
+      "urlTemplate": "https://www.qfex.com/trade/{TICKER}-USD?ref=grant",
       "isHip3": false
     },
     "vest": {

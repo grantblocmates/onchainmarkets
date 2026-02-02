@@ -41,7 +41,7 @@ export async function fetchQfex(): Promise<NormalizedMarket[]> {
     const detail = refdataRes.status === "rejected"
       ? String((refdataRes as PromiseRejectedResult).reason?.cause?.code ?? (refdataRes as PromiseRejectedResult).reason?.message ?? "unknown")
       : String(refdataRes.value.status);
-    console.error(`QFEX refdata API error: ${detail}`);
+    console.error(`[QFEX] Refdata API error: ${detail}`);
     return [];
   }
 
@@ -51,9 +51,11 @@ export async function fetchQfex(): Promise<NormalizedMarket[]> {
     const body = await refdataRes.value.json();
     refdataItems = Array.isArray(body) ? body : body.data ?? [];
   } catch {
-    console.error("QFEX refdata parse error");
+    console.error("[QFEX] Refdata parse error");
     return [];
   }
+
+  console.log(`[QFEX] Refdata: ${refdataItems.length} markets`);
 
   // Parse volume data — response is { "AAPL-USD": { volume, notional }, ... }
   const volumeMap = new Map<string, number>();
@@ -65,9 +67,12 @@ export async function fetchQfex(): Promise<NormalizedMarket[]> {
           volumeMap.set(symbol, entry.notional);
         }
       }
+      console.log(`[QFEX] Volume: ${volumeMap.size} symbols with notional data`);
     } catch {
-      console.error("QFEX volume parse error");
+      console.error("[QFEX] Volume parse error");
     }
+  } else {
+    console.warn("[QFEX] Volume endpoint unavailable, continuing without volume data");
   }
 
   const markets: NormalizedMarket[] = [];
@@ -77,8 +82,10 @@ export async function fetchQfex(): Promise<NormalizedMarket[]> {
     const ticker = normalizeTicker(rawTicker, "qfex");
     const type = classifyAsset(ticker);
 
-    // Skip crypto
-    if (type === "crypto") continue;
+    if (type === "crypto") {
+      console.log(`[QFEX] Skipped ${rawTicker} -> ${ticker} (crypto)`);
+      continue;
+    }
 
     // Estimate price from min/max bounds midpoint
     const minPrice = parseFloat(item.min_price);
@@ -104,5 +111,6 @@ export async function fetchQfex(): Promise<NormalizedMarket[]> {
     });
   }
 
+  console.log(`[QFEX] Returning ${markets.length} tradfi markets`);
   return markets;
 }
