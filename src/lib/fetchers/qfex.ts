@@ -38,8 +38,10 @@ export async function fetchQfex(): Promise<NormalizedMarket[]> {
   ]);
 
   if (refdataRes.status !== "fulfilled" || !refdataRes.value.ok) {
-    const status = refdataRes.status === "fulfilled" ? refdataRes.value.status : "network error";
-    console.error(`QFEX refdata API error: ${status}`);
+    const detail = refdataRes.status === "rejected"
+      ? String((refdataRes as PromiseRejectedResult).reason?.cause?.code ?? (refdataRes as PromiseRejectedResult).reason?.message ?? "unknown")
+      : String(refdataRes.value.status);
+    console.error(`QFEX refdata API error: ${detail}`);
     return [];
   }
 
