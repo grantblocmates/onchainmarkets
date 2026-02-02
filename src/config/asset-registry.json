@@ -1421,7 +1421,7 @@
     "vest": {
       "name": "Vest",
       "color": "#14B8A6",
-      "urlTemplate": "https://app.vest.exchange/trade/{TICKER}-PERP",
+      "urlTemplate": "https://app.vest.exchange/trade/{TICKER}-USD-PERP",
       "isHip3": false
     }
   }

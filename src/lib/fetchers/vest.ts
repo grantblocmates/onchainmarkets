@@ -5,10 +5,14 @@ import {
   getAssetName,
 } from "../types";
 
-const BASE_URL = "https://serverprod.vest.exchange/v2";
+const BASE_URL = "https://server-prod.hz.vestmarkets.com/v2";
+
+const HEADERS = {
+  xrestservermm: "restserver0",
+};
 
 interface VestTicker {
-  symbol: string;       // e.g. "AAPL-PERP"
+  symbol: string;       // e.g. "AAPL-USD-PERP" (tradfi) or "BTC-PERP" (crypto)
   closePrice: string;
   quoteVolume: string;  // 24h volume in USD
   priceChange: string;  // absolute change
@@ -21,7 +25,7 @@ interface VestTicker {
 
 interface VestExchangeInfo {
   symbols: Array<{
-    symbol: string;       // e.g. "AAPL-PERP"
+    symbol: string;       // e.g. "AAPL-USD-PERP"
     status: string;       // e.g. "TRADING"
     baseAsset: string;    // e.g. "AAPL"
     quoteAsset: string;   // e.g. "USD"
@@ -34,13 +38,14 @@ interface VestExchangeInfo {
 /**
  * Fetch all markets from Vest Exchange.
  * Uses /v2/ticker/24hr for live data and /v2/exchangeInfo for market metadata.
- * Symbol format: "AAPL-PERP" — we strip the -PERP suffix for normalization.
+ * Tradfi symbol format: "AAPL-USD-PERP" — we strip the -USD-PERP suffix.
+ * Crypto symbol format: "BTC-PERP" — these are filtered out.
  */
 export async function fetchVest(): Promise<NormalizedMarket[]> {
   // Fetch both endpoints in parallel
   const [tickerRes, infoRes] = await Promise.allSettled([
-    fetch(`${BASE_URL}/ticker/24hr`),
-    fetch(`${BASE_URL}/exchangeInfo`),
+    fetch(`${BASE_URL}/ticker/24hr`, { headers: HEADERS }),
+    fetch(`${BASE_URL}/exchangeInfo`, { headers: HEADERS }),
   ]);
 
   // Build leverage map from exchangeInfo
@@ -77,8 +82,9 @@ export async function fetchVest(): Promise<NormalizedMarket[]> {
   const markets: NormalizedMarket[] = [];
 
   for (const t of tickers) {
-    // Strip -PERP suffix: "AAPL-PERP" -> "AAPL"
-    const rawTicker = t.symbol.replace(/-PERP$/i, "");
+    // Tradfi symbols: "AAPL-USD-PERP" -> "AAPL"
+    // Crypto symbols: "BTC-PERP" -> "BTC" (will be filtered by classifyAsset)
+    const rawTicker = t.symbol.replace(/-USD-PERP$/i, "").replace(/-PERP$/i, "");
     const ticker = normalizeTicker(rawTicker, "vest");
     const type = classifyAsset(ticker);
 
