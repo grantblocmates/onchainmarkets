@@ -5,7 +5,8 @@ import {
   getAssetName,
 } from "../types";
 
-const BASE_URL = "https://http.qfex.com";
+const REFDATA_URL = "https://http.qfex.com/refdata";
+const VOLUME_URL = "https://http.qfex.com/v4/volume/today";
 
 interface QfexMarket {
   clobPairId: string;
@@ -33,63 +34,47 @@ interface QfexVolumeEntry {
  */
 export async function fetchQfex(): Promise<NormalizedMarket[]> {
   try {
-    const [refdataRes, volumeRes] = await Promise.allSettled([
-      fetch(`${BASE_URL}/refdata`),
-      fetch(`${BASE_URL}/v4/volume/today`),
-    ]);
-
-    if (refdataRes.status !== "fulfilled" || !refdataRes.value.ok) {
-      const detail = refdataRes.status === "rejected"
-        ? String((refdataRes as PromiseRejectedResult).reason?.cause?.code ?? (refdataRes as PromiseRejectedResult).reason?.message ?? "unknown")
-        : String(refdataRes.value.status);
-      console.error(`[QFEX] Refdata API error: ${detail}`);
+    // --- Fetch refdata ---
+    const refdataRes = await fetch(REFDATA_URL);
+    if (!refdataRes.ok) {
+      console.error("[QFEX] Refdata fetch failed:", refdataRes.status);
       return [];
     }
 
-    // Parse refdata — response is { type: "refdata", data: [...] }
-    let refdataItems: QfexMarket[];
-    try {
-      const body = await refdataRes.value.json();
-      const rawData = Array.isArray(body) ? body : body?.data;
-      if (!Array.isArray(rawData)) {
-        console.error("[QFEX] Unexpected refdata format:", typeof body, Array.isArray(body) ? "array" : Object.keys(body || {}).join(","));
-        return [];
-      }
-      refdataItems = rawData;
-    } catch (e) {
-      console.error("[QFEX] Refdata parse error:", e);
+    const refdataBody = await refdataRes.json();
+
+    // Response is { type: "refdata", data: [...] } or possibly a raw array
+    const rawData = Array.isArray(refdataBody) ? refdataBody : refdataBody?.data;
+    if (!Array.isArray(rawData)) {
+      console.error("[QFEX] refdata.data is not an array:", typeof refdataBody);
       return [];
     }
 
+    const refdataItems: QfexMarket[] = rawData;
     console.log(`[QFEX] Refdata: ${refdataItems.length} markets`);
 
-    // Parse volume data — response is { "AAPL-USD": { volume, notional }, ... }
-    const volumeMap = new Map<string, number>();
-    if (volumeRes.status === "fulfilled" && volumeRes.value.ok) {
-      try {
-        const volData = await volumeRes.value.json();
-        if (volData && typeof volData === "object" && !Array.isArray(volData)) {
-          for (const [symbol, entry] of Object.entries(volData)) {
-            const vol = entry as QfexVolumeEntry;
-            if (vol && typeof vol.notional === "number" && vol.notional > 0) {
-              volumeMap.set(symbol, vol.notional);
-            }
-          }
+    // --- Fetch volume (object keyed by symbol, NOT an array) ---
+    let volumeData: Record<string, QfexVolumeEntry> = {};
+    try {
+      const volumeRes = await fetch(VOLUME_URL);
+      if (volumeRes.ok) {
+        const volumeBody = await volumeRes.json();
+        if (volumeBody && typeof volumeBody === "object" && !Array.isArray(volumeBody)) {
+          volumeData = volumeBody;
         }
-        console.log(`[QFEX] Volume: ${volumeMap.size} symbols with notional data`);
-      } catch (e) {
-        console.error("[QFEX] Volume parse error:", e);
       }
-    } else {
-      console.warn("[QFEX] Volume endpoint unavailable, continuing without volume data");
+      console.log("[QFEX] Volume keys:", Object.keys(volumeData).length);
+    } catch (e) {
+      console.warn("[QFEX] Volume fetch failed, continuing without:", e);
     }
 
+    // --- Build normalized markets ---
     const markets: NormalizedMarket[] = [];
 
     for (const item of refdataItems) {
-      const rawTicker = item.base_asset;
-      if (!rawTicker) continue;
+      if (!item.base_asset || item.status !== "ACTIVE") continue;
 
+      const rawTicker = item.base_asset;
       const ticker = normalizeTicker(rawTicker, "qfex");
       const type = classifyAsset(ticker);
 
@@ -98,16 +83,18 @@ export async function fetchQfex(): Promise<NormalizedMarket[]> {
         continue;
       }
 
-      // Estimate price from min/max bounds midpoint
-      const minPrice = parseFloat(item.min_price);
-      const maxPrice = parseFloat(item.max_price);
+      // Price from min/max bounds midpoint
+      const minPrice = parseFloat(item.min_price) || 0;
+      const maxPrice = parseFloat(item.max_price) || 0;
       const price = (minPrice + maxPrice) / 2;
 
       // Leverage from price bounds
       const halfSpread = maxPrice - price;
       const maxLeverage = halfSpread > 0 ? Math.max(1, Math.floor(price / halfSpread)) : 20;
 
-      const volume24h = volumeMap.get(item.symbol);
+      // Access volume directly by symbol key — no iteration needed
+      const volumeEntry = volumeData[item.symbol];
+      const volume24h = volumeEntry?.notional ?? 0;
 
       markets.push({
         ticker,
@@ -115,17 +102,17 @@ export async function fetchQfex(): Promise<NormalizedMarket[]> {
         name: getAssetName(ticker),
         type,
         exchange: "qfex",
-        isActive: item.status === "ACTIVE",
+        isActive: true,
         maxLeverage,
         price: isFinite(price) && price > 0 ? price : undefined,
-        volume24h: volume24h && volume24h > 0 ? volume24h : undefined,
+        volume24h: volume24h > 0 ? volume24h : undefined,
       });
     }
 
     console.log(`[QFEX] Returning ${markets.length} tradfi markets`);
     return markets;
   } catch (error) {
-    console.error("[QFEX] Unexpected error:", error);
+    console.error("[QFEX] Fetch error:", error);
     return [];
   }
 }
