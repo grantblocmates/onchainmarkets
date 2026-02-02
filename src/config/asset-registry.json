@@ -1218,35 +1218,35 @@
     "cash": {
       "name": "CASH",
       "color": "#F59E0B",
-      "urlTemplate": "https://app.hyperliquid.xyz/trade/{TICKER}?ref=GRANTBLOCMATES",
+      "urlTemplate": "https://app.hyperliquid.xyz/trade/cash:{TICKER}?ref=GRANTBLOCMATES",
       "isHip3": true,
       "deployer": "cash"
     },
     "hyna": {
       "name": "Hyena",
       "color": "#EF4444",
-      "urlTemplate": "https://app.hyperliquid.xyz/trade/{TICKER}?ref=GRANTBLOCMATES",
+      "urlTemplate": "https://app.hyperliquid.xyz/trade/hyna:{TICKER}?ref=GRANTBLOCMATES",
       "isHip3": true,
       "deployer": "hyna"
     },
     "vntl": {
       "name": "Ventuals",
       "color": "#3B82F6",
-      "urlTemplate": "https://app.hyperliquid.xyz/trade/{TICKER}?ref=GRANTBLOCMATES",
+      "urlTemplate": "https://app.hyperliquid.xyz/trade/vntl:{TICKER}?ref=GRANTBLOCMATES",
       "isHip3": true,
       "deployer": "vntl"
     },
     "flx": {
       "name": "FLX",
       "color": "#10B981",
-      "urlTemplate": "https://app.hyperliquid.xyz/trade/{TICKER}?ref=GRANTBLOCMATES",
+      "urlTemplate": "https://app.hyperliquid.xyz/trade/flx:{TICKER}?ref=GRANTBLOCMATES",
       "isHip3": true,
       "deployer": "flx"
     },
     "km": {
       "name": "Kinetiq Markets",
       "color": "#6366F1",
-      "urlTemplate": "https://app.hyperliquid.xyz/trade/{TICKER}?ref=GRANTBLOCMATES",
+      "urlTemplate": "https://app.hyperliquid.xyz/trade/km:{TICKER}?ref=GRANTBLOCMATES",
       "isHip3": true,
       "deployer": "km"
     },

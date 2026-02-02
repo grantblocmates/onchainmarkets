@@ -41,10 +41,19 @@ export function getExchange(id: string): Exchange | undefined {
 
 /**
  * Build the trading URL for an asset on a given exchange.
- * Replaces {TICKER} in the exchange's URL template with the asset ticker.
+ * Looks up the exchange-specific raw ticker from the registry,
+ * then replaces {TICKER} in the exchange's URL template.
  */
-export function getTradingUrl(exchangeId: string, ticker: string): string {
+export function getTradingUrl(exchangeId: string, canonicalTicker: string): string {
   const exchange = exchanges[exchangeId];
   if (!exchange) return "#";
-  return exchange.tradingUrlTemplate.replace("{TICKER}", ticker);
+
+  // Look up the exchange-specific raw ticker from the registry
+  const registryAsset = registryData.assets.find(
+    (a) => a.canonical === canonicalTicker
+  );
+  const exchanges_ = registryAsset?.exchanges as Record<string, string | null> | undefined;
+  const rawTicker = exchanges_?.[exchangeId] ?? canonicalTicker;
+
+  return exchange.tradingUrlTemplate.replace("{TICKER}", rawTicker);
 }
