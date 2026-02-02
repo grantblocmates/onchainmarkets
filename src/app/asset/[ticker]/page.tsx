@@ -1,9 +1,12 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { assets, getAssetByTicker } from "@/config/assets";
+import { getLiveAssets } from "@/lib/getAssets";
 import type { AssetType } from "@/config/types";
 import ExchangeListingRow from "@/components/ExchangeListingRow";
 import ExchangeBadge from "@/components/ExchangeBadge";
+
+// Revalidate every 5 minutes — pulls fresh data from exchanges
+export const revalidate = 300;
 
 const typeLabels: Record<AssetType, string> = {
   stock: "EQUITY",
@@ -13,23 +16,19 @@ const typeLabels: Record<AssetType, string> = {
   bond: "FIXED INCOME",
 };
 
-export function generateStaticParams() {
-  return assets.map((asset) => ({
-    ticker: asset.ticker,
-  }));
-}
-
-export function generateMetadata({ params }: { params: Promise<{ ticker: string }> }) {
-  return params.then(({ ticker }) => {
-    const asset = getAssetByTicker(ticker);
-    if (!asset) {
-      return { title: "Asset Not Found \u2014 On-Chain Markets" };
-    }
-    return {
-      title: asset.ticker + " (" + asset.name + ") \u2014 " + asset.listings.length + " Venue" + (asset.listings.length !== 1 ? "s" : "") + " | On-Chain Markets",
-      description: "Trade " + asset.name + " (" + asset.ticker + ") as a perpetual contract across " + asset.listings.length + " decentralized venue" + (asset.listings.length !== 1 ? "s" : "") + ".",
-    };
-  });
+export async function generateMetadata({ params }: { params: Promise<{ ticker: string }> }) {
+  const { ticker } = await params;
+  const assets = await getLiveAssets();
+  const asset = assets.find(
+    (a) => a.ticker.toLowerCase() === ticker.toLowerCase()
+  );
+  if (!asset) {
+    return { title: "Asset Not Found — On-Chain Markets" };
+  }
+  return {
+    title: asset.ticker + " (" + asset.name + ") — " + asset.listings.length + " Venue" + (asset.listings.length !== 1 ? "s" : "") + " | On-Chain Markets",
+    description: "Trade " + asset.name + " (" + asset.ticker + ") as a perpetual contract across " + asset.listings.length + " decentralized venue" + (asset.listings.length !== 1 ? "s" : "") + ".",
+  };
 }
 
 export default async function AssetPage({
@@ -38,7 +37,10 @@ export default async function AssetPage({
   params: Promise<{ ticker: string }>;
 }) {
   const { ticker } = await params;
-  const asset = getAssetByTicker(ticker);
+  const assets = await getLiveAssets();
+  const asset = assets.find(
+    (a) => a.ticker.toLowerCase() === ticker.toLowerCase()
+  );
 
   if (!asset) {
     notFound();

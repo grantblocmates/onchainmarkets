@@ -1421,7 +1421,7 @@
     "vest": {
       "name": "Vest",
       "color": "#14B8A6",
-      "urlTemplate": "https://trade.vestmarkets.com/markets/{TICKER}",
+      "urlTemplate": "https://trade.vestmarkets.com/trade/{TICKER}-USD-PERP",
       "isHip3": false
     }
   }
