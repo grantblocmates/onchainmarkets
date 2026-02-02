@@ -1204,61 +1204,61 @@
   "exchangeMeta": {
     "hyperliquid": {
       "name": "Hyperliquid",
-      "color": "#84E8A2",
+      "color": "#7D9B76",
       "urlTemplate": "https://app.hyperliquid.xyz/trade/{TICKER}?ref=GRANTBLOCMATES",
       "isHip3": false
     },
     "tradexyz": {
       "name": "tradeXYZ",
-      "color": "#8B5CF6",
+      "color": "#8B7B9B",
       "urlTemplate": "https://app.trade.xyz/?market={TICKER}",
       "isHip3": true,
       "deployer": "xyz"
     },
     "cash": {
       "name": "CASH",
-      "color": "#F59E0B",
+      "color": "#B8A070",
       "urlTemplate": "https://app.hyperliquid.xyz/trade/cash:{TICKER}?ref=GRANTBLOCMATES",
       "isHip3": true,
       "deployer": "cash"
     },
     "hyna": {
       "name": "Hyena",
-      "color": "#EF4444",
+      "color": "#A68B8B",
       "urlTemplate": "https://app.hyperliquid.xyz/trade/hyna:{TICKER}?ref=GRANTBLOCMATES",
       "isHip3": true,
       "deployer": "hyna"
     },
     "vntl": {
       "name": "Ventuals",
-      "color": "#3B82F6",
+      "color": "#7B8A9B",
       "urlTemplate": "https://app.hyperliquid.xyz/trade/vntl:{TICKER}?ref=GRANTBLOCMATES",
       "isHip3": true,
       "deployer": "vntl"
     },
     "flx": {
       "name": "FLX",
-      "color": "#10B981",
+      "color": "#8B9B7B",
       "urlTemplate": "https://app.hyperliquid.xyz/trade/flx:{TICKER}?ref=GRANTBLOCMATES",
       "isHip3": true,
       "deployer": "flx"
     },
     "km": {
       "name": "Kinetiq Markets",
-      "color": "#6366F1",
+      "color": "#A68770",
       "urlTemplate": "https://app.hyperliquid.xyz/trade/km:{TICKER}?ref=GRANTBLOCMATES",
       "isHip3": true,
       "deployer": "km"
     },
     "lighter": {
       "name": "Lighter",
-      "color": "#F97316",
+      "color": "#9B9387",
       "urlTemplate": "https://app.lighter.xyz/trade/{TICKER}?referral=192461W3",
       "isHip3": false
     },
     "ostium": {
       "name": "Ostium",
-      "color": "#6366F1",
+      "color": "#878B9B",
       "urlTemplate": "https://app.ostium.com/trade?from={TICKER}&to=USD&ref=LUF4D",
       "isHip3": false
     }
