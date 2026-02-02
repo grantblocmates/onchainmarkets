@@ -6,8 +6,8 @@ interface SparklineProps {
 
 export default function Sparkline({
   data,
-  width = 120,
-  height = 40,
+  width = 80,
+  height = 24,
 }: SparklineProps) {
   if (!data || data.length < 2) return null;
 
@@ -15,10 +15,10 @@ export default function Sparkline({
   const max = Math.max(...data);
   const range = max - min || 1;
 
-  const isUp = data[data.length - 1] >= data[0];
-  const color = isUp ? "#22C55E" : "#EF4444";
+  // Thin, low-contrast, monochrome — secondary to the numbers
+  const color = "#B8B6AF";
 
-  const padding = 2;
+  const padding = 1;
   const chartWidth = width - padding * 2;
   const chartHeight = height - padding * 2;
 
@@ -35,13 +35,13 @@ export default function Sparkline({
       width={width}
       height={height}
       viewBox={`0 0 ${width} ${height}`}
-      className="block"
+      className="block opacity-60"
     >
       <polyline
         points={points}
         fill="none"
         stroke={color}
-        strokeWidth={1.5}
+        strokeWidth={1}
         strokeLinecap="round"
         strokeLinejoin="round"
       />

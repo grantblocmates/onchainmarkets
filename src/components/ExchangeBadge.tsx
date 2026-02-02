@@ -9,9 +9,9 @@ export default function ExchangeBadge({ exchangeId }: ExchangeBadgeProps) {
   if (!exchange) return null;
 
   return (
-    <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-bg-card border border-border text-sm font-medium text-text-primary">
+    <span className="inline-flex items-center gap-1.5 px-2 py-1 border border-border-light text-xs font-medium text-text-secondary">
       <span
-        className="w-2.5 h-2.5 rounded-full shrink-0"
+        className="w-1.5 h-1.5 rounded-full shrink-0"
         style={{ backgroundColor: exchange.color }}
       />
       {exchange.name}
