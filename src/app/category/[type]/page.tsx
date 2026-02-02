@@ -4,7 +4,7 @@ import { getAssetsByType } from "@/config/assets";
 import { ASSET_TYPE_META, AssetType } from "@/config/types";
 import AssetCard from "@/components/AssetCard";
 
-const validTypes: AssetType[] = ["stock", "commodity", "index", "forex", "bond"];
+const validTypes: AssetType[] = ["stock", "commodity", "index", "forex", "bond", "ipo", "etf"];
 
 export function generateStaticParams() {
   return validTypes.map((type) => ({ type }));

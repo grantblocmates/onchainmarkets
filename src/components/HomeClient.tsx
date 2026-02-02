@@ -7,7 +7,7 @@ import { exchanges } from "@/config/exchanges";
 import SearchBar from "@/components/SearchBar";
 import AssetTableRow from "@/components/AssetTableRow";
 
-const CATEGORY_TYPES: AssetType[] = ["stock", "commodity", "index", "forex", "bond"];
+const CATEGORY_TYPES: AssetType[] = ["stock", "commodity", "index", "forex", "bond", "ipo", "etf"];
 
 type SortMode = "volume" | "price" | "change";
 
@@ -30,7 +30,7 @@ export default function HomeClient({ assets, exchangeCount }: HomeClientProps) {
     setSelectedExchanges((prev) => {
       const next = new Set(prev);
       if (next.has(id)) {
-        if (next.size > 1) next.delete(id);
+        next.delete(id);
       } else {
         next.add(id);
       }
@@ -155,6 +155,22 @@ export default function HomeClient({ assets, exchangeCount }: HomeClientProps) {
           <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
             <div className="flex items-center gap-0 overflow-x-auto whitespace-nowrap">
               <span className="label-system text-[10px] mr-2">VENUES</span>
+              <button
+                onClick={() => setSelectedExchanges(new Set(EXCHANGE_LIST.map((e) => e.id)))}
+                className={`label-system text-[10px] px-2 py-1 border-b transition-colors ${
+                  selectedExchanges.size === EXCHANGE_LIST.length
+                    ? "border-text-primary text-text-primary"
+                    : "border-transparent text-text-muted hover:text-text-secondary"
+                }`}
+              >
+                ALL
+              </button>
+              <button
+                onClick={() => setSelectedExchanges(new Set())}
+                className="label-system text-[10px] px-2 py-1 border-b border-transparent text-text-muted hover:text-text-secondary transition-colors"
+              >
+                NONE
+              </button>
               {EXCHANGE_LIST.map((ex) => {
                 const isSelected = selectedExchanges.has(ex.id);
                 return (
