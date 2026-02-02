@@ -1,6 +1,6 @@
 // Core types for On-Chain Markets
 
-export type AssetType = "stock" | "commodity" | "index" | "forex" | "bond";
+export type AssetType = "stock" | "commodity" | "index" | "forex" | "bond" | "ipo" | "etf";
 
 export interface Asset {
   ticker: string;
@@ -87,5 +87,15 @@ export const ASSET_TYPE_META: Record<
     label: "Bonds",
     description: "Government bond perpetuals",
     icon: "🏛️",
+  },
+  ipo: {
+    label: "New IPOs",
+    description: "Pre-IPO and newly listed equity perpetuals",
+    icon: "🚀",
+  },
+  etf: {
+    label: "ETFs",
+    description: "Exchange-traded fund perpetuals",
+    icon: "📦",
   },
 };

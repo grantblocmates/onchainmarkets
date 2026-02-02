@@ -1349,6 +1349,294 @@
         "qfex": null,
         "vest": null
       }
+    },
+    {
+      "canonical": "BTGO",
+      "name": "BitGo Holdings",
+      "category": "ipo",
+      "exchanges": {
+        "hyperliquid": null,
+        "tradexyz": null,
+        "cash": null,
+        "hyna": null,
+        "vntl": null,
+        "flx": null,
+        "km": null,
+        "lighter": null,
+        "ostium": null,
+        "qfex": null,
+        "vest": "BTGO"
+      }
+    },
+    {
+      "canonical": "NAVN",
+      "name": "Navan",
+      "category": "ipo",
+      "exchanges": {
+        "hyperliquid": null,
+        "tradexyz": null,
+        "cash": null,
+        "hyna": null,
+        "vntl": null,
+        "flx": null,
+        "km": null,
+        "lighter": null,
+        "ostium": null,
+        "qfex": null,
+        "vest": "NAVN"
+      }
+    },
+    {
+      "canonical": "FIGR",
+      "name": "Figure Technology Solutions",
+      "category": "ipo",
+      "exchanges": {
+        "hyperliquid": null,
+        "tradexyz": null,
+        "cash": null,
+        "hyna": null,
+        "vntl": null,
+        "flx": null,
+        "km": null,
+        "lighter": null,
+        "ostium": null,
+        "qfex": null,
+        "vest": "FIGR"
+      }
+    },
+    {
+      "canonical": "PXED",
+      "name": "Phoenix Education Partners",
+      "category": "ipo",
+      "exchanges": {
+        "hyperliquid": null,
+        "tradexyz": null,
+        "cash": null,
+        "hyna": null,
+        "vntl": null,
+        "flx": null,
+        "km": null,
+        "lighter": null,
+        "ostium": null,
+        "qfex": null,
+        "vest": "PXED"
+      }
+    },
+    {
+      "canonical": "GEMI",
+      "name": "Gemini Space Station",
+      "category": "ipo",
+      "exchanges": {
+        "hyperliquid": null,
+        "tradexyz": null,
+        "cash": null,
+        "hyna": null,
+        "vntl": null,
+        "flx": null,
+        "km": null,
+        "lighter": null,
+        "ostium": null,
+        "qfex": null,
+        "vest": "GEMI"
+      }
+    },
+    {
+      "canonical": "BETA",
+      "name": "Beta Technologies",
+      "category": "ipo",
+      "exchanges": {
+        "hyperliquid": null,
+        "tradexyz": null,
+        "cash": null,
+        "hyna": null,
+        "vntl": null,
+        "flx": null,
+        "km": null,
+        "lighter": null,
+        "ostium": null,
+        "qfex": null,
+        "vest": "BETA"
+      }
+    },
+    {
+      "canonical": "ALH",
+      "name": "Alliance Laundry Holdings",
+      "category": "ipo",
+      "exchanges": {
+        "hyperliquid": null,
+        "tradexyz": null,
+        "cash": null,
+        "hyna": null,
+        "vntl": null,
+        "flx": null,
+        "km": null,
+        "lighter": null,
+        "ostium": null,
+        "qfex": null,
+        "vest": "ALH"
+      }
+    },
+    {
+      "canonical": "PTRN",
+      "name": "Pattern Group",
+      "category": "ipo",
+      "exchanges": {
+        "hyperliquid": null,
+        "tradexyz": null,
+        "cash": null,
+        "hyna": null,
+        "vntl": null,
+        "flx": null,
+        "km": null,
+        "lighter": null,
+        "ostium": null,
+        "qfex": null,
+        "vest": "PTRN"
+      }
+    },
+    {
+      "canonical": "MDLN",
+      "name": "Medline",
+      "category": "ipo",
+      "exchanges": {
+        "hyperliquid": null,
+        "tradexyz": null,
+        "cash": null,
+        "hyna": null,
+        "vntl": null,
+        "flx": null,
+        "km": null,
+        "lighter": null,
+        "ostium": null,
+        "qfex": null,
+        "vest": "MDLN"
+      }
+    },
+    {
+      "canonical": "STUB",
+      "name": "StubHub Holdings",
+      "category": "ipo",
+      "exchanges": {
+        "hyperliquid": null,
+        "tradexyz": null,
+        "cash": null,
+        "hyna": null,
+        "vntl": null,
+        "flx": null,
+        "km": null,
+        "lighter": null,
+        "ostium": null,
+        "qfex": null,
+        "vest": "STUB"
+      }
+    },
+    {
+      "canonical": "GLD",
+      "name": "SPDR Gold Shares",
+      "category": "etf",
+      "exchanges": {
+        "hyperliquid": null,
+        "tradexyz": null,
+        "cash": null,
+        "hyna": null,
+        "vntl": null,
+        "flx": null,
+        "km": null,
+        "lighter": null,
+        "ostium": null,
+        "qfex": null,
+        "vest": "GLD"
+      }
+    },
+    {
+      "canonical": "SLV",
+      "name": "iShares Silver Trust",
+      "category": "etf",
+      "exchanges": {
+        "hyperliquid": null,
+        "tradexyz": null,
+        "cash": null,
+        "hyna": null,
+        "vntl": null,
+        "flx": null,
+        "km": null,
+        "lighter": null,
+        "ostium": null,
+        "qfex": null,
+        "vest": "SLV"
+      }
+    },
+    {
+      "canonical": "QQQ",
+      "name": "Invesco QQQ Trust",
+      "category": "etf",
+      "exchanges": {
+        "hyperliquid": null,
+        "tradexyz": null,
+        "cash": null,
+        "hyna": null,
+        "vntl": null,
+        "flx": null,
+        "km": null,
+        "lighter": null,
+        "ostium": null,
+        "qfex": null,
+        "vest": "QQQ"
+      }
+    },
+    {
+      "canonical": "IWM",
+      "name": "iShares Russell 2000 ETF",
+      "category": "etf",
+      "exchanges": {
+        "hyperliquid": null,
+        "tradexyz": null,
+        "cash": null,
+        "hyna": null,
+        "vntl": null,
+        "flx": null,
+        "km": null,
+        "lighter": null,
+        "ostium": null,
+        "qfex": null,
+        "vest": "IWM"
+      }
+    },
+    {
+      "canonical": "SPY",
+      "name": "SPDR S&P 500 ETF Trust",
+      "category": "etf",
+      "exchanges": {
+        "hyperliquid": null,
+        "tradexyz": null,
+        "cash": null,
+        "hyna": null,
+        "vntl": null,
+        "flx": null,
+        "km": null,
+        "lighter": null,
+        "ostium": null,
+        "qfex": null,
+        "vest": "SPY"
+      }
+    },
+    {
+      "canonical": "USO",
+      "name": "United States Oil Fund",
+      "category": "etf",
+      "exchanges": {
+        "hyperliquid": null,
+        "tradexyz": null,
+        "cash": null,
+        "hyna": null,
+        "vntl": null,
+        "flx": null,
+        "km": null,
+        "lighter": null,
+        "ostium": null,
+        "qfex": null,
+        "vest": "USO"
+      }
     }
   ],
   "exchangeMeta": {
@@ -1421,7 +1709,7 @@
     "vest": {
       "name": "Vest",
       "color": "#14B8A6",
-      "urlTemplate": "https://trade.vestmarkets.com/trade/{TICKER}-USD-PERP",
+      "urlTemplate": "https://trade.vestmarkets.com/trade/{TICKER}-USD-PERP?ref=MSMEF",
       "isHip3": false
     }
   }

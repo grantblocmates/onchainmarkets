@@ -8,6 +8,8 @@ const typeBadgeLabels: Record<AssetType, string> = {
   index: "INDEX",
   forex: "FOREX",
   bond: "BOND",
+  ipo: "NEW IPO",
+  etf: "ETF",
 };
 
 interface AssetCardProps {

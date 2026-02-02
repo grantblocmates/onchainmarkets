@@ -14,6 +14,8 @@ const typeLabels: Record<AssetType, string> = {
   index: "INDEX",
   forex: "FX",
   bond: "FIXED INCOME",
+  ipo: "NEW IPO",
+  etf: "ETF",
 };
 
 export async function generateMetadata({ params }: { params: Promise<{ ticker: string }> }) {

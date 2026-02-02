@@ -46,6 +46,8 @@ export type AssetCategory =
   | "index"
   | "forex"
   | "bond"
+  | "ipo"
+  | "etf"
   | "crypto";
 
 // --------------- Registry-driven lookup tables ---------------
