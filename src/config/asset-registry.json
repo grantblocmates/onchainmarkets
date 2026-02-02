@@ -195,7 +195,7 @@
         "lighter": null,
         "ostium": "CL/USD",
         "qfex": null,
-        "vest": "CL"
+        "vest": null
       }
     },
     {
@@ -1257,7 +1257,7 @@
         "lighter": "XAG",
         "ostium": "XAG/USD",
         "qfex": "SILVER",
-        "vest": "SLV"
+        "vest": null
       }
     },
     {
@@ -1275,7 +1275,7 @@
         "lighter": "XAU",
         "ostium": "XAU/USD",
         "qfex": "GOLD",
-        "vest": "GLD"
+        "vest": null
       }
     },
     {
@@ -1421,7 +1421,7 @@
     "vest": {
       "name": "Vest",
       "color": "#14B8A6",
-      "urlTemplate": "https://app.vest.exchange/trade/{TICKER}-USD-PERP",
+      "urlTemplate": "https://trade.vestmarkets.com/trade/{TICKER}-USD-PERP",
       "isHip3": false
     }
   }
