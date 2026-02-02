@@ -112,12 +112,8 @@ export default function AssetTableRow({ asset, rank }: AssetTableRowProps) {
                   e.stopPropagation();
                   window.open(getTradingUrl(listing.exchangeId, asset.ticker), "_blank");
                 }}
-                className="inline-flex items-center gap-1 text-[11px] font-medium px-2 py-1 border border-border-light text-text-muted hover:text-text-primary hover:border-border-hover transition-colors cursor-pointer whitespace-nowrap"
+                className="font-data text-[10px] uppercase px-2 py-0.5 border border-border-light text-text-muted hover:text-text-primary hover:border-border-hover transition-colors cursor-pointer whitespace-nowrap"
               >
-                <span
-                  className="w-1.5 h-1.5 rounded-full shrink-0"
-                  style={{ backgroundColor: exchange.color }}
-                />
                 {exchange.name}
               </span>
             );

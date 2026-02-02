@@ -21,8 +21,8 @@
   --negative: #9B2C2C;
 
   /* Selection */
-  --selection-bg: #D8D6CF;
-  --selection-text: #111111;
+  --selection-bg: #111111;
+  --selection-text: #E5E5E5;
 }
 
 @theme inline {
@@ -63,7 +63,7 @@ html {
 /* System label utility */
 .label-system {
   font-family: var(--font-geist-mono), monospace;
-  font-size: 0.6875rem;
+  font-size: 10px;
   font-weight: 500;
   letter-spacing: 0.06em;
   text-transform: uppercase;
@@ -80,6 +80,6 @@ html {
 .heading-condensed {
   font-family: var(--font-geist-mono), monospace;
   font-weight: 600;
-  letter-spacing: -0.01em;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
 }

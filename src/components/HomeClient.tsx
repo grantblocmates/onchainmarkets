@@ -153,26 +153,20 @@ export default function HomeClient({ assets, exchangeCount }: HomeClientProps) {
 
           {/* Exchange filters + sort */}
           <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
-            <div className="flex items-center gap-2 overflow-x-auto whitespace-nowrap">
-              <span className="label-system text-[10px] mr-1">VENUES</span>
+            <div className="flex items-center gap-0 overflow-x-auto whitespace-nowrap">
+              <span className="label-system text-[10px] mr-2">VENUES</span>
               {EXCHANGE_LIST.map((ex) => {
                 const isSelected = selectedExchanges.has(ex.id);
                 return (
                   <button
                     key={ex.id}
                     onClick={() => toggleExchange(ex.id)}
-                    className={`inline-flex items-center gap-1.5 text-[11px] font-medium px-2 py-1 border transition-colors ${
+                    className={`label-system text-[10px] px-2 py-1 border-b transition-colors ${
                       isSelected
-                        ? "border-border-hover text-text-primary"
-                        : "border-border-light text-text-muted"
+                        ? "border-text-primary text-text-primary"
+                        : "border-transparent text-text-muted hover:text-text-secondary"
                     }`}
                   >
-                    <span
-                      className="w-1.5 h-1.5 rounded-full shrink-0"
-                      style={{
-                        backgroundColor: isSelected ? ex.color : "var(--border)",
-                      }}
-                    />
                     {ex.name}
                   </button>
                 );

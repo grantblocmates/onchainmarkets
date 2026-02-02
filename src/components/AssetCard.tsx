@@ -20,7 +20,7 @@ export default function AssetCard({ asset }: AssetCardProps) {
 
   return (
     <Link href={"/asset/" + asset.ticker} className="block group">
-      <div className="border border-border-light p-4 hover:border-border-hover hover:bg-row-hover transition-colors">
+      <div className="p-4 hover:bg-row-hover transition-colors">
         <div className="flex items-start justify-between gap-3">
           <div className="flex-1 min-w-0">
             <div className="flex items-center gap-2 mb-1">
