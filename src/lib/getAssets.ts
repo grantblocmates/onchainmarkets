@@ -95,6 +95,7 @@ function getSector(ticker: string): string | undefined {
     LLY: "Healthcare / Pharma",
     TSM: "Semiconductors",
     CRWV: "Cybersecurity",
+    RKLB: "Aerospace",
     URNM: "Nuclear / Uranium",
     SPACEX: "Aerospace",
     OPENAI: "AI",

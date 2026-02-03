@@ -1351,6 +1351,24 @@
       }
     },
     {
+      "canonical": "RKLB",
+      "name": "Rocket Lab USA",
+      "category": "stock",
+      "exchanges": {
+        "hyperliquid": null,
+        "tradexyz": null,
+        "cash": null,
+        "hyna": null,
+        "vntl": null,
+        "flx": null,
+        "km": null,
+        "lighter": null,
+        "ostium": null,
+        "qfex": "RKLB",
+        "vest": "RKLB"
+      }
+    },
+    {
       "canonical": "BTGO",
       "name": "BitGo Holdings",
       "category": "ipo",
@@ -1703,7 +1721,7 @@
     "qfex": {
       "name": "QFEX",
       "color": "#6B4C9A",
-      "urlTemplate": "https://app.qfex.com/trade/{TICKER}-USD?ref=grant",
+      "urlTemplate": "https://www.qfex.com/trade/{TICKER}-USD?ref=grant",
       "isHip3": false
     },
     "vest": {
