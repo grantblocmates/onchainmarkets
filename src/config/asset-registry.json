@@ -1715,7 +1715,7 @@
     "ostium": {
       "name": "Ostium",
       "color": "#D97706",
-      "urlTemplate": "https://app.ostium.com/trade?pair={TICKER}&ref=LUF4D",
+      "urlTemplate": "https://app.ostium.com/trade/{TICKER}",
       "isHip3": false
     },
     "qfex": {
