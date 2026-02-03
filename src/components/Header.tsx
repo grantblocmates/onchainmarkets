@@ -12,7 +12,7 @@ export default function Header() {
     <header className="w-full border-b border-border bg-bg sticky top-0 z-50">
       <div className="max-w-[1400px] mx-auto px-6 py-3 flex items-center justify-between">
         <Link href="/" className="heading-condensed text-sm text-text-primary tracking-[0.08em]">
-          ON-CHAIN MARKETS
+          ONCHAIN MARKETS
         </Link>
 
         <nav className="hidden md:flex items-center gap-0">

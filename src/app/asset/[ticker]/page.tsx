@@ -25,10 +25,10 @@ export async function generateMetadata({ params }: { params: Promise<{ ticker: s
     (a) => a.ticker.toLowerCase() === ticker.toLowerCase()
   );
   if (!asset) {
-    return { title: "Asset Not Found — On-Chain Markets" };
+    return { title: "Asset Not Found — Onchain Markets" };
   }
   return {
-    title: asset.ticker + " (" + asset.name + ") — " + asset.listings.length + " Venue" + (asset.listings.length !== 1 ? "s" : "") + " | On-Chain Markets",
+    title: asset.ticker + " (" + asset.name + ") — " + asset.listings.length + " Venue" + (asset.listings.length !== 1 ? "s" : "") + " | Onchain Markets",
     description: "Trade " + asset.name + " (" + asset.ticker + ") as a perpetual contract across " + asset.listings.length + " decentralized venue" + (asset.listings.length !== 1 ? "s" : "") + ".",
   };
 }

@@ -1,5 +1,5 @@
 /**
- * Types and helpers for On-Chain Markets.
+ * Types and helpers for Onchain Markets.
  *
  * The asset registry (asset-registry.json) is the single source of truth
  * for tickers, names, categories, and exchange mappings.
