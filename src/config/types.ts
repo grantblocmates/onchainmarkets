@@ -1,4 +1,4 @@
-// Core types for On-Chain Markets
+// Core types for Onchain Markets
 
 export type AssetType = "stock" | "commodity" | "index" | "forex" | "bond" | "ipo" | "etf";
 

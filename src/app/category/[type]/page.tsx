@@ -13,11 +13,11 @@ export function generateStaticParams() {
 export function generateMetadata({ params }: { params: Promise<{ type: string }> }) {
   return params.then(({ type }) => {
     if (!validTypes.includes(type as AssetType)) {
-      return { title: "Category Not Found \u2014 On-Chain Markets" };
+      return { title: "Category Not Found \u2014 Onchain Markets" };
     }
     const meta = ASSET_TYPE_META[type as AssetType];
     return {
-      title: meta.label + " \u2014 On-Chain Markets",
+      title: meta.label + " \u2014 Onchain Markets",
       description: meta.description + ". Browse all " + meta.label.toLowerCase() + " available as perpetual contracts on decentralized venues.",
     };
   });

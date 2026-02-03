@@ -15,9 +15,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "On-Chain Markets — Traditional Asset Perpetuals Across Decentralized Venues",
+  title: "Onchain Markets — Traditional Asset Perpetuals Across Decentralized Venues",
   description:
-    "Market intelligence for on-chain traditional asset perpetuals. Stocks, commodities, indices, and FX across Hyperliquid, Ostium, Lighter, and other decentralized venues.",
+    "Market intelligence for onchain traditional asset perpetuals. Stocks, commodities, indices, and FX across Hyperliquid, Ostium, Lighter, and other decentralized venues.",
 };
 
 export default function RootLayout({

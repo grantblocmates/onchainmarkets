@@ -1666,8 +1666,8 @@
     },
     "tradexyz": {
       "name": "tradeXYZ",
-      "color": "#8B7B9B",
-      "urlTemplate": "https://app.trade.xyz/?market={TICKER}",
+      "color": "#8B5CF6",
+      "urlTemplate": "https://app.hyperliquid.xyz/trade/xyz:{TICKER}?ref=GRANTBLOCMATES",
       "isHip3": true,
       "deployer": "xyz"
     },
