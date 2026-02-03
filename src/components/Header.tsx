@@ -11,9 +11,14 @@ export default function Header() {
   return (
     <header className="w-full border-b border-border bg-bg sticky top-0 z-50">
       <div className="max-w-[1400px] mx-auto px-6 py-3 flex items-center justify-between">
-        <Link href="/" className="heading-condensed text-sm text-text-primary tracking-[0.08em]">
-          ONCHAIN MARKETS
-        </Link>
+        <div className="flex items-center gap-2.5">
+          <Link href="/" className="heading-condensed text-sm text-text-primary tracking-[0.08em]">
+            ONCHAIN MARKETS
+          </Link>
+          <span className="text-text-muted text-[10px] font-mono uppercase tracking-wide">
+            by blocmates
+          </span>
+        </div>
 
         <nav className="hidden md:flex items-center gap-0">
           {navLinks.map((link) => (
