@@ -55,5 +55,7 @@ export function getTradingUrl(exchangeId: string, canonicalTicker: string): stri
   const exchanges_ = registryAsset?.exchanges as Record<string, string | null> | undefined;
   const rawTicker = exchanges_?.[exchangeId] ?? canonicalTicker;
 
-  return exchange.tradingUrlTemplate.replace("{TICKER}", rawTicker);
+  // Ostium uses "FROM-TO" in URLs but "FROM/TO" in registry for normalization
+  const urlTicker = rawTicker.replace("/", "-");
+  return exchange.tradingUrlTemplate.replace("{TICKER}", urlTicker);
 }
