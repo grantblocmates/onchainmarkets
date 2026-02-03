@@ -1,10 +1,13 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { getAssetsByType } from "@/config/assets";
+import { getLiveAssets } from "@/lib/getAssets";
 import { ASSET_TYPE_META, AssetType } from "@/config/types";
 import AssetCard from "@/components/AssetCard";
 
 const validTypes: AssetType[] = ["stock", "commodity", "index", "forex", "bond", "ipo", "etf"];
+
+// Revalidate every 5 minutes — pulls fresh data from exchanges
+export const revalidate = 300;
 
 export function generateStaticParams() {
   return validTypes.map((type) => ({ type }));
@@ -36,7 +39,10 @@ export default async function CategoryPage({
 
   const assetType = type as AssetType;
   const meta = ASSET_TYPE_META[assetType];
-  const categoryAssets = getAssetsByType(assetType);
+
+  // Use live synced data instead of static config
+  const allAssets = await getLiveAssets();
+  const categoryAssets = allAssets.filter((a) => a.type === assetType);
 
   return (
     <div className="max-w-[1400px] mx-auto px-6 py-12">
