@@ -28,56 +28,68 @@ interface OstiumPrice {
  * Those fields are left undefined.
  */
 export async function fetchOstium(): Promise<NormalizedMarket[]> {
-  let res: Response;
   try {
-    res = await fetch(API_URL, {
+    const res = await fetch(API_URL, {
       headers: { "Content-Type": "application/json" },
     });
-  } catch (err) {
-    console.error("Ostium fetch error (likely SSL):", (err as Error).message);
+
+    if (!res.ok) {
+      console.error("[Ostium] Fetch failed:", res.status);
+      return [];
+    }
+
+    const data = await res.json();
+
+    if (!Array.isArray(data)) {
+      console.error("[Ostium] Unexpected response format:", typeof data);
+      return [];
+    }
+
+    const prices: OstiumPrice[] = data;
+    console.log(`[Ostium] Received ${prices.length} price feeds`);
+
+    const markets: NormalizedMarket[] = [];
+
+    for (const item of prices) {
+      if (!item.from || !item.to) continue;
+
+      const rawTicker = `${item.from}/${item.to}`;
+      const ticker = normalizeTicker(rawTicker, "ostium");
+      const type = classifyAsset(ticker);
+
+      // Skip crypto — we only want traditional assets
+      if (type === "crypto") {
+        console.log(`[Ostium] Skipped ${rawTicker} -> ${ticker} (crypto)`);
+        continue;
+      }
+
+      markets.push({
+        ticker,
+        rawTicker,
+        name: getAssetName(ticker),
+        type,
+        exchange: "ostium",
+        isActive: true,
+        maxLeverage: getOstiumLeverage(type),
+        price: item.mid || undefined,
+        // Ostium REST API has no volume, change, or funding data
+        volume24h: undefined,
+        change24h: undefined,
+      });
+    }
+
+    console.log(`[Ostium] Returning ${markets.length} tradfi markets`);
+    return markets;
+  } catch (error) {
+    console.error("[Ostium] Fetch error:", error);
     return [];
   }
-
-  if (!res.ok) {
-    console.error(`Ostium API error: ${res.status}`);
-    return [];
-  }
-
-  const prices: OstiumPrice[] = await res.json();
-  const markets: NormalizedMarket[] = [];
-
-  for (const item of prices) {
-    const rawTicker = `${item.from}/${item.to}`;
-    const ticker = normalizeTicker(rawTicker, "ostium");
-    const type = classifyAsset(ticker);
-
-    // Skip crypto — we only want traditional assets
-    if (type === "crypto") continue;
-
-    markets.push({
-      ticker,
-      rawTicker,
-      name: getAssetName(ticker),
-      type,
-      exchange: "ostium",
-      isActive: true,
-      maxLeverage: getOstiumLeverage(type),
-      price: item.mid || undefined,
-      // Ostium REST API has no volume, change, or funding data
-      volume24h: undefined,
-      change24h: undefined,
-    });
-  }
-
-  return markets;
 }
 
 /**
  * Ostium leverage varies by asset type.
  */
-function getOstiumLeverage(
-  type: string
-): number {
+function getOstiumLeverage(type: string): number {
   switch (type) {
     case "forex":
       return 500;
