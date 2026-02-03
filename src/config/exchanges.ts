@@ -39,6 +39,14 @@ export function getExchange(id: string): Exchange | undefined {
   return exchanges[id];
 }
 
+// Ostium indices that trade against non-USD quote currencies
+const OSTIUM_QUOTE_CURRENCY: Record<string, string> = {
+  DAX: "EUR",
+  FTSE: "GBP",
+  NIK: "JPY",
+  HSI: "HKD",
+};
+
 /**
  * Build the trading URL for an asset on a given exchange.
  * Looks up the exchange-specific raw ticker from the registry,
@@ -55,5 +63,12 @@ export function getTradingUrl(exchangeId: string, canonicalTicker: string): stri
   const exchanges_ = registryAsset?.exchanges as Record<string, string | null> | undefined;
   const rawTicker = exchanges_?.[exchangeId] ?? canonicalTicker;
 
-  return exchange.tradingUrlTemplate.replace("{TICKER}", rawTicker);
+  let url = exchange.tradingUrlTemplate.replace("{TICKER}", rawTicker);
+
+  // Ostium: some indices use non-USD quote currencies
+  if (exchangeId === "ostium" && OSTIUM_QUOTE_CURRENCY[rawTicker]) {
+    url = url.replace("to=USD", `to=${OSTIUM_QUOTE_CURRENCY[rawTicker]}`);
+  }
+
+  return url;
 }
