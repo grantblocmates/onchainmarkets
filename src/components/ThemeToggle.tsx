@@ -1,18 +1,41 @@
-"use client";
+'use client';
 
-import { useTheme } from "@/context/ThemeContext";
+import { useTheme } from '@/context/ThemeContext';
 
 export default function ThemeToggle() {
   const { theme, toggleTheme } = useTheme();
+  const isLight = theme === 'light';
 
   return (
     <button
       onClick={toggleTheme}
-      className="label-system px-3 py-1.5 hover:text-text-primary transition-colors cursor-pointer"
-      aria-label={`Switch to ${theme === "light" ? "dark" : "light"} mode`}
-      title={theme === "light" ? "GN — switch to dark mode" : "GM — switch to light mode"}
+      className="relative flex items-center w-20 h-9 rounded-full bg-[var(--bg-surface)] border border-[var(--border)] transition-all duration-300 cursor-pointer"
+      aria-label={isLight ? 'Switch to dark mode' : 'Switch to light mode'}
     >
-      {theme === "light" ? "GN" : "GM"}
+      {/* Sliding pill indicator */}
+      <span
+        className={`absolute w-9 h-7 rounded-full bg-[var(--text-primary)] shadow-sm transition-transform duration-300 ease-in-out ${
+          isLight ? 'translate-x-1' : 'translate-x-10'
+        }`}
+      />
+
+      {/* GM label (left side) */}
+      <span
+        className={`relative z-10 flex-1 text-center text-xs font-mono font-bold transition-colors duration-300 ${
+          isLight ? 'text-[var(--bg)]' : 'text-[var(--text-muted)]'
+        }`}
+      >
+        GM
+      </span>
+
+      {/* GN label (right side) */}
+      <span
+        className={`relative z-10 flex-1 text-center text-xs font-mono font-bold transition-colors duration-300 ${
+          !isLight ? 'text-[var(--bg)]' : 'text-[var(--text-muted)]'
+        }`}
+      >
+        GN
+      </span>
     </button>
   );
 }
