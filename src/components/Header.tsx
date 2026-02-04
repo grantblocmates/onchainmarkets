@@ -1,7 +1,4 @@
-"use client";
-
 import Link from "next/link";
-import { ThemeToggle } from "./ThemeToggle";
 
 const navLinks = [
   { label: "Stocks", href: "/category/stock" },
@@ -23,21 +20,17 @@ export default function Header() {
           </span>
         </div>
 
-        <div className="flex items-center gap-6">
-          <nav className="hidden md:flex items-center gap-0">
-            {navLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className="label-system px-3 py-1.5 hover:text-text-primary transition-colors"
-              >
-                {link.label}
-              </Link>
-            ))}
-          </nav>
-
-          <ThemeToggle />
-        </div>
+        <nav className="hidden md:flex items-center gap-0">
+          {navLinks.map((link) => (
+            <Link
+              key={link.href}
+              href={link.href}
+              className="label-system px-3 py-1.5 hover:text-text-primary transition-colors"
+            >
+              {link.label}
+            </Link>
+          ))}
+        </nav>
       </div>
     </header>
   );
