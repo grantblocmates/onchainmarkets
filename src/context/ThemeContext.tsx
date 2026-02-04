@@ -32,8 +32,9 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
     document.documentElement.setAttribute('data-theme', newTheme);
   };
 
-  // Prevent flash of wrong theme
-  if (!mounted) return null;
+  if (!mounted) {
+    return <>{children}</>;
+  }
 
   return (
     <ThemeContext.Provider value={{ theme, toggleTheme, isDarkMode: theme === 'dark' }}>
