@@ -15,7 +15,8 @@
         "lighter": "AAPL",
         "ostium": "AAPL",
         "qfex": "AAPL",
-        "vest": "AAPL"
+        "vest": "AAPL",
+        "edgex": "AAPLUSD"
       }
     },
     {
@@ -33,7 +34,8 @@
         "lighter": null,
         "ostium": null,
         "qfex": null,
-        "vest": null
+        "vest": null,
+        "edgex": null
       }
     },
     {
@@ -51,7 +53,8 @@
         "lighter": null,
         "ostium": "AMD",
         "qfex": null,
-        "vest": "AMD"
+        "vest": "AMD",
+        "edgex": "AMDUSD"
       }
     },
     {
@@ -69,7 +72,8 @@
         "lighter": "AMZN",
         "ostium": "AMZN",
         "qfex": null,
-        "vest": "AMZN"
+        "vest": "AMZN",
+        "edgex": "AMZNUSD"
       }
     },
     {
@@ -87,7 +91,8 @@
         "lighter": null,
         "ostium": null,
         "qfex": null,
-        "vest": null
+        "vest": null,
+        "edgex": null
       }
     },
     {
@@ -105,7 +110,8 @@
         "lighter": "AUDUSD",
         "ostium": "AUDUSD",
         "qfex": null,
-        "vest": "AUD"
+        "vest": "AUD",
+        "edgex": null
       }
     },
     {
@@ -123,7 +129,8 @@
         "lighter": null,
         "ostium": "BABA",
         "qfex": null,
-        "vest": "BABA"
+        "vest": "BABA",
+        "edgex": null
       }
     },
     {
@@ -141,7 +148,8 @@
         "lighter": null,
         "ostium": null,
         "qfex": null,
-        "vest": null
+        "vest": null,
+        "edgex": null
       }
     },
     {
@@ -159,7 +167,8 @@
         "lighter": "BMNR",
         "ostium": "BMNR",
         "qfex": null,
-        "vest": "BMNR"
+        "vest": "BMNR",
+        "edgex": null
       }
     },
     {
@@ -177,7 +186,8 @@
         "lighter": null,
         "ostium": "BYD",
         "qfex": null,
-        "vest": null
+        "vest": null,
+        "edgex": null
       }
     },
     {
@@ -195,7 +205,8 @@
         "lighter": null,
         "ostium": "CL",
         "qfex": null,
-        "vest": null
+        "vest": null,
+        "edgex": "CLUSD"
       }
     },
     {
@@ -213,7 +224,8 @@
         "lighter": "COIN",
         "ostium": "COIN",
         "qfex": null,
-        "vest": "COIN"
+        "vest": "COIN",
+        "edgex": "COINUSD"
       }
     },
     {
@@ -231,7 +243,8 @@
         "lighter": null,
         "ostium": "COST",
         "qfex": null,
-        "vest": "COST"
+        "vest": "COST",
+        "edgex": null
       }
     },
     {
@@ -249,7 +262,8 @@
         "lighter": "CRCL",
         "ostium": "CRCL",
         "qfex": null,
-        "vest": "CRCL"
+        "vest": "CRCL",
+        "edgex": "CRCLUSD"
       }
     },
     {
@@ -267,7 +281,8 @@
         "lighter": null,
         "ostium": null,
         "qfex": "CRWV",
-        "vest": "CRWV"
+        "vest": "CRWV",
+        "edgex": null
       }
     },
     {
@@ -285,7 +300,8 @@
         "lighter": null,
         "ostium": "CVX",
         "qfex": null,
-        "vest": "CVX"
+        "vest": "CVX",
+        "edgex": null
       }
     },
     {
@@ -303,7 +319,8 @@
         "lighter": null,
         "ostium": "DAX",
         "qfex": null,
-        "vest": null
+        "vest": null,
+        "edgex": null
       }
     },
     {
@@ -321,7 +338,8 @@
         "lighter": null,
         "ostium": null,
         "qfex": null,
-        "vest": null
+        "vest": null,
+        "edgex": null
       }
     },
     {
@@ -339,7 +357,8 @@
         "lighter": null,
         "ostium": "DJI",
         "qfex": null,
-        "vest": null
+        "vest": null,
+        "edgex": null
       }
     },
     {
@@ -357,7 +376,8 @@
         "lighter": null,
         "ostium": null,
         "qfex": null,
-        "vest": null
+        "vest": null,
+        "edgex": null
       }
     },
     {
@@ -375,7 +395,8 @@
         "lighter": "EURUSD",
         "ostium": "EURUSD",
         "qfex": "EUR",
-        "vest": "EUR"
+        "vest": "EUR",
+        "edgex": null
       }
     },
     {
@@ -393,7 +414,8 @@
         "lighter": null,
         "ostium": "FTSE",
         "qfex": null,
-        "vest": null
+        "vest": null,
+        "edgex": null
       }
     },
     {
@@ -411,7 +433,8 @@
         "lighter": "GBPUSD",
         "ostium": "GBPUSD",
         "qfex": "GBP",
-        "vest": "GBP"
+        "vest": "GBP",
+        "edgex": null
       }
     },
     {
@@ -429,7 +452,8 @@
         "lighter": null,
         "ostium": "GLXY",
         "qfex": null,
-        "vest": "GLXY"
+        "vest": "GLXY",
+        "edgex": null
       }
     },
     {
@@ -447,7 +471,8 @@
         "lighter": "GOOGL",
         "ostium": "GOOG",
         "qfex": null,
-        "vest": "GOOGL"
+        "vest": "GOOGL",
+        "edgex": "GOOGUSD"
       }
     },
     {
@@ -465,7 +490,8 @@
         "lighter": null,
         "ostium": "HG",
         "qfex": null,
-        "vest": null
+        "vest": null,
+        "edgex": "COPPERUSD"
       }
     },
     {
@@ -483,7 +509,8 @@
         "lighter": "HOOD",
         "ostium": "HOOD",
         "qfex": null,
-        "vest": "HOOD"
+        "vest": "HOOD",
+        "edgex": "HOODUSD"
       }
     },
     {
@@ -501,7 +528,27 @@
         "lighter": null,
         "ostium": "HSI",
         "qfex": null,
-        "vest": null
+        "vest": null,
+        "edgex": null
+      }
+    },
+    {
+      "canonical": "IAU",
+      "name": "iShares Gold Trust",
+      "category": "etf",
+      "exchanges": {
+        "hyperliquid": null,
+        "tradexyz": null,
+        "cash": null,
+        "hyna": null,
+        "vntl": null,
+        "flx": null,
+        "km": null,
+        "lighter": null,
+        "ostium": null,
+        "qfex": null,
+        "vest": null,
+        "edgex": "IAUUSD"
       }
     },
     {
@@ -519,7 +566,8 @@
         "lighter": null,
         "ostium": null,
         "qfex": null,
-        "vest": null
+        "vest": null,
+        "edgex": null
       }
     },
     {
@@ -537,7 +585,8 @@
         "lighter": null,
         "ostium": null,
         "qfex": null,
-        "vest": "INTC"
+        "vest": "INTC",
+        "edgex": null
       }
     },
     {
@@ -555,7 +604,8 @@
         "lighter": null,
         "ostium": null,
         "qfex": null,
-        "vest": "LLY"
+        "vest": "LLY",
+        "edgex": null
       }
     },
     {
@@ -573,7 +623,8 @@
         "lighter": null,
         "ostium": null,
         "qfex": null,
-        "vest": null
+        "vest": null,
+        "edgex": null
       }
     },
     {
@@ -591,7 +642,8 @@
         "lighter": "META",
         "ostium": "META",
         "qfex": "META",
-        "vest": "META"
+        "vest": "META",
+        "edgex": "METAUSD"
       }
     },
     {
@@ -609,7 +661,8 @@
         "lighter": "MSFT",
         "ostium": "MSFT",
         "qfex": "MSFT",
-        "vest": "MSFT"
+        "vest": "MSFT",
+        "edgex": null
       }
     },
     {
@@ -627,7 +680,8 @@
         "lighter": "MSTR",
         "ostium": "MSTR",
         "qfex": null,
-        "vest": "MSTR"
+        "vest": "MSTR",
+        "edgex": "MSTRUSD"
       }
     },
     {
@@ -645,7 +699,8 @@
         "lighter": null,
         "ostium": null,
         "qfex": null,
-        "vest": "MU"
+        "vest": "MU",
+        "edgex": null
       }
     },
     {
@@ -663,7 +718,8 @@
         "lighter": "QQQ",
         "ostium": "NDX",
         "qfex": "US100",
-        "vest": "NDX"
+        "vest": "NDX",
+        "edgex": null
       }
     },
     {
@@ -681,7 +737,8 @@
         "lighter": null,
         "ostium": "NFLX",
         "qfex": null,
-        "vest": "NFLX"
+        "vest": "NFLX",
+        "edgex": null
       }
     },
     {
@@ -699,7 +756,8 @@
         "lighter": null,
         "ostium": null,
         "qfex": null,
-        "vest": null
+        "vest": null,
+        "edgex": "NATGASUSD"
       }
     },
     {
@@ -717,7 +775,8 @@
         "lighter": null,
         "ostium": "NIK",
         "qfex": null,
-        "vest": null
+        "vest": null,
+        "edgex": null
       }
     },
     {
@@ -735,7 +794,8 @@
         "lighter": null,
         "ostium": null,
         "qfex": null,
-        "vest": null
+        "vest": null,
+        "edgex": null
       }
     },
     {
@@ -753,7 +813,8 @@
         "lighter": "NVDA",
         "ostium": "NVDA",
         "qfex": "NVDA",
-        "vest": "NVDA"
+        "vest": "NVDA",
+        "edgex": "NVDAUSD"
       }
     },
     {
@@ -771,7 +832,8 @@
         "lighter": "NZDUSD",
         "ostium": "NZDUSD",
         "qfex": null,
-        "vest": "NZD"
+        "vest": "NZD",
+        "edgex": null
       }
     },
     {
@@ -789,7 +851,8 @@
         "lighter": null,
         "ostium": null,
         "qfex": null,
-        "vest": null
+        "vest": null,
+        "edgex": null
       }
     },
     {
@@ -807,7 +870,8 @@
         "lighter": null,
         "ostium": "ORCL",
         "qfex": null,
-        "vest": "ORCL"
+        "vest": "ORCL",
+        "edgex": null
       }
     },
     {
@@ -825,7 +889,8 @@
         "lighter": "PAXG",
         "ostium": null,
         "qfex": null,
-        "vest": null
+        "vest": null,
+        "edgex": null
       }
     },
     {
@@ -843,7 +908,8 @@
         "lighter": "PLTR",
         "ostium": "PLTR",
         "qfex": "PLTR",
-        "vest": "PLTR"
+        "vest": "PLTR",
+        "edgex": "PLTRUSD"
       }
     },
     {
@@ -861,7 +927,8 @@
         "lighter": null,
         "ostium": "RIVN",
         "qfex": null,
-        "vest": "RIVN"
+        "vest": "RIVN",
+        "edgex": null
       }
     },
     {
@@ -879,7 +946,8 @@
         "lighter": null,
         "ostium": null,
         "qfex": null,
-        "vest": null
+        "vest": null,
+        "edgex": null
       }
     },
     {
@@ -897,7 +965,8 @@
         "lighter": null,
         "ostium": null,
         "qfex": null,
-        "vest": null
+        "vest": null,
+        "edgex": null
       }
     },
     {
@@ -915,7 +984,8 @@
         "lighter": null,
         "ostium": "SBET",
         "qfex": null,
-        "vest": "SBET"
+        "vest": "SBET",
+        "edgex": null
       }
     },
     {
@@ -933,7 +1003,8 @@
         "lighter": null,
         "ostium": null,
         "qfex": null,
-        "vest": null
+        "vest": null,
+        "edgex": null
       }
     },
     {
@@ -951,7 +1022,8 @@
         "lighter": null,
         "ostium": null,
         "qfex": null,
-        "vest": null
+        "vest": null,
+        "edgex": null
       }
     },
     {
@@ -969,7 +1041,8 @@
         "lighter": null,
         "ostium": null,
         "qfex": null,
-        "vest": null
+        "vest": null,
+        "edgex": null
       }
     },
     {
@@ -987,7 +1060,8 @@
         "lighter": null,
         "ostium": null,
         "qfex": null,
-        "vest": "SNDK"
+        "vest": "SNDK",
+        "edgex": null
       }
     },
     {
@@ -1005,7 +1079,8 @@
         "lighter": null,
         "ostium": null,
         "qfex": null,
-        "vest": null
+        "vest": null,
+        "edgex": null
       }
     },
     {
@@ -1023,7 +1098,8 @@
         "lighter": "SPY",
         "ostium": "SPX",
         "qfex": null,
-        "vest": "SPX"
+        "vest": "SPX",
+        "edgex": null
       }
     },
     {
@@ -1041,7 +1117,8 @@
         "lighter": "TSLA",
         "ostium": "TSLA",
         "qfex": "TSLA",
-        "vest": "TSLA"
+        "vest": "TSLA",
+        "edgex": "TSLAUSD"
       }
     },
     {
@@ -1059,7 +1136,8 @@
         "lighter": null,
         "ostium": null,
         "qfex": null,
-        "vest": "TSM"
+        "vest": "TSM",
+        "edgex": null
       }
     },
     {
@@ -1077,7 +1155,8 @@
         "lighter": null,
         "ostium": "URA",
         "qfex": "URANIUM",
-        "vest": "URA"
+        "vest": "URA",
+        "edgex": null
       }
     },
     {
@@ -1095,7 +1174,8 @@
         "lighter": null,
         "ostium": null,
         "qfex": null,
-        "vest": null
+        "vest": null,
+        "edgex": null
       }
     },
     {
@@ -1113,7 +1193,8 @@
         "lighter": null,
         "ostium": null,
         "qfex": null,
-        "vest": "USAR"
+        "vest": "USAR",
+        "edgex": null
       }
     },
     {
@@ -1131,7 +1212,8 @@
         "lighter": null,
         "ostium": null,
         "qfex": null,
-        "vest": null
+        "vest": null,
+        "edgex": null
       }
     },
     {
@@ -1149,7 +1231,8 @@
         "lighter": "USDCAD",
         "ostium": "USDCAD",
         "qfex": null,
-        "vest": null
+        "vest": null,
+        "edgex": null
       }
     },
     {
@@ -1167,7 +1250,8 @@
         "lighter": "USDCHF",
         "ostium": "USDCHF",
         "qfex": null,
-        "vest": null
+        "vest": null,
+        "edgex": null
       }
     },
     {
@@ -1185,7 +1269,8 @@
         "lighter": "USDJPY",
         "ostium": "USDJPY",
         "qfex": null,
-        "vest": null
+        "vest": null,
+        "edgex": null
       }
     },
     {
@@ -1203,7 +1288,8 @@
         "lighter": "USDKRW",
         "ostium": null,
         "qfex": null,
-        "vest": null
+        "vest": null,
+        "edgex": null
       }
     },
     {
@@ -1221,7 +1307,8 @@
         "lighter": null,
         "ostium": "USDMXN",
         "qfex": null,
-        "vest": null
+        "vest": null,
+        "edgex": null
       }
     },
     {
@@ -1239,7 +1326,8 @@
         "lighter": null,
         "ostium": null,
         "qfex": null,
-        "vest": null
+        "vest": null,
+        "edgex": null
       }
     },
     {
@@ -1257,7 +1345,8 @@
         "lighter": "XAG",
         "ostium": "XAG",
         "qfex": "SILVER",
-        "vest": null
+        "vest": null,
+        "edgex": "SILVERUSD"
       }
     },
     {
@@ -1275,7 +1364,8 @@
         "lighter": "XAU",
         "ostium": "XAU",
         "qfex": "GOLD",
-        "vest": null
+        "vest": null,
+        "edgex": "XAUTUSD"
       }
     },
     {
@@ -1293,7 +1383,8 @@
         "lighter": null,
         "ostium": "XOM",
         "qfex": null,
-        "vest": "XOM"
+        "vest": "XOM",
+        "edgex": null
       }
     },
     {
@@ -1311,7 +1402,8 @@
         "lighter": null,
         "ostium": "XPD",
         "qfex": null,
-        "vest": null
+        "vest": null,
+        "edgex": null
       }
     },
     {
@@ -1329,7 +1421,8 @@
         "lighter": null,
         "ostium": "XPT",
         "qfex": null,
-        "vest": null
+        "vest": null,
+        "edgex": null
       }
     },
     {
@@ -1347,7 +1440,8 @@
         "lighter": null,
         "ostium": null,
         "qfex": null,
-        "vest": null
+        "vest": null,
+        "edgex": null
       }
     },
     {
@@ -1365,7 +1459,8 @@
         "lighter": null,
         "ostium": null,
         "qfex": "RKLB",
-        "vest": "RKLB"
+        "vest": "RKLB",
+        "edgex": null
       }
     },
     {
@@ -1383,7 +1478,8 @@
         "lighter": null,
         "ostium": null,
         "qfex": null,
-        "vest": "BTGO"
+        "vest": "BTGO",
+        "edgex": null
       }
     },
     {
@@ -1401,7 +1497,8 @@
         "lighter": null,
         "ostium": null,
         "qfex": null,
-        "vest": "NAVN"
+        "vest": "NAVN",
+        "edgex": null
       }
     },
     {
@@ -1419,7 +1516,8 @@
         "lighter": null,
         "ostium": null,
         "qfex": null,
-        "vest": "FIGR"
+        "vest": "FIGR",
+        "edgex": null
       }
     },
     {
@@ -1437,7 +1535,8 @@
         "lighter": null,
         "ostium": null,
         "qfex": null,
-        "vest": "PXED"
+        "vest": "PXED",
+        "edgex": null
       }
     },
     {
@@ -1455,7 +1554,8 @@
         "lighter": null,
         "ostium": null,
         "qfex": null,
-        "vest": "GEMI"
+        "vest": "GEMI",
+        "edgex": null
       }
     },
     {
@@ -1473,7 +1573,8 @@
         "lighter": null,
         "ostium": null,
         "qfex": null,
-        "vest": "BETA"
+        "vest": "BETA",
+        "edgex": null
       }
     },
     {
@@ -1491,7 +1592,8 @@
         "lighter": null,
         "ostium": null,
         "qfex": null,
-        "vest": "ALH"
+        "vest": "ALH",
+        "edgex": null
       }
     },
     {
@@ -1509,7 +1611,8 @@
         "lighter": null,
         "ostium": null,
         "qfex": null,
-        "vest": "PTRN"
+        "vest": "PTRN",
+        "edgex": null
       }
     },
     {
@@ -1527,7 +1630,8 @@
         "lighter": null,
         "ostium": null,
         "qfex": null,
-        "vest": "MDLN"
+        "vest": "MDLN",
+        "edgex": null
       }
     },
     {
@@ -1545,7 +1649,8 @@
         "lighter": null,
         "ostium": null,
         "qfex": null,
-        "vest": "STUB"
+        "vest": "STUB",
+        "edgex": null
       }
     },
     {
@@ -1563,7 +1668,8 @@
         "lighter": null,
         "ostium": null,
         "qfex": null,
-        "vest": "GLD"
+        "vest": "GLD",
+        "edgex": null
       }
     },
     {
@@ -1581,7 +1687,8 @@
         "lighter": null,
         "ostium": null,
         "qfex": null,
-        "vest": "SLV"
+        "vest": "SLV",
+        "edgex": "SLVUSD"
       }
     },
     {
@@ -1599,7 +1706,8 @@
         "lighter": null,
         "ostium": null,
         "qfex": null,
-        "vest": "QQQ"
+        "vest": "QQQ",
+        "edgex": "QQQUSD"
       }
     },
     {
@@ -1617,7 +1725,8 @@
         "lighter": null,
         "ostium": null,
         "qfex": null,
-        "vest": "IWM"
+        "vest": "IWM",
+        "edgex": null
       }
     },
     {
@@ -1635,7 +1744,8 @@
         "lighter": null,
         "ostium": null,
         "qfex": null,
-        "vest": "SPY"
+        "vest": "SPY",
+        "edgex": "SPYUSD"
       }
     },
     {
@@ -1653,7 +1763,8 @@
         "lighter": null,
         "ostium": null,
         "qfex": null,
-        "vest": "USO"
+        "vest": "USO",
+        "edgex": null
       }
     }
   ],
@@ -1728,6 +1839,12 @@
       "name": "Vest",
       "color": "#14B8A6",
       "urlTemplate": "https://trade.vestmarkets.com/trade/{TICKER}-USD-PERP?ref=MSMEF",
+      "isHip3": false
+    },
+    "edgex": {
+      "name": "EdgeX",
+      "color": "#7C3AED",
+      "urlTemplate": "https://pro.edgex.exchange/en-US/trade/{TICKER}USD",
       "isHip3": false
     }
   }

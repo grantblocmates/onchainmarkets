@@ -38,7 +38,8 @@ export type ExchangeId =
   | "lighter"
   | "ostium"
   | "qfex"
-  | "vest";
+  | "vest"
+  | "edgex";
 
 export type AssetCategory =
   | "stock"
