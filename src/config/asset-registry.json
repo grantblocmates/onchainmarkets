@@ -1844,7 +1844,7 @@
     "edgex": {
       "name": "EdgeX",
       "color": "#7C3AED",
-      "urlTemplate": "https://pro.edgex.exchange/en-US/trade/{TICKER}USD",
+      "urlTemplate": "https://pro.edgex.exchange/en-US/trade/{TICKER}?ref=383892721",
       "isHip3": false
     }
   }
